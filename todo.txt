@@ -1,0 +1,13 @@
+To-do
+######
+Front-end
+=========
+  Basic front-end
+
+Back-end
+========
+  API: spoonacular / Edamam / Food2Fork
+    https://spoonacular.com/food-api/docs
+  NEDB: database for storing user recipe
+  Dotfile: For hiding API key
+  Search: Searching recipe with ingredients
