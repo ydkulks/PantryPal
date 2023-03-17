@@ -1,0 +1,8 @@
+:root{
+ --background:#ff5757; 
+}
+.App {
+  height:20cm;
+  background-color: var(--background);
+}
+
