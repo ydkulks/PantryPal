@@ -3,8 +3,11 @@
 .HeroContainer {
   padding-top:10%;
   padding-right:5%;
+  padding-left:5%;
   background-color: var(--bg);
   min-height:100vh;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
 }
 
 

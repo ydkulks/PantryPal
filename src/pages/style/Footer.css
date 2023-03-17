@@ -1,0 +1,10 @@
+@import './var.css';
+
+.FooterSection{
+  background-color: var(--bg);
+  color: var(--white);
+  text-align:center;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  padding:20px;
+}

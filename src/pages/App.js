@@ -5,6 +5,7 @@ import './style/App.css';
 // Pages
 import HeroSection from './Hero';
 import NavBar from './Nav';
+import FooterSection from './Footer';
 
 function App() {
   return (
@@ -13,9 +14,8 @@ function App() {
       <div className="HeroContainer">
         <HeroSection />
       </div>
-      <div>
-        <h1>Footer</h1>
-      </div>
+      <h2>hello</h2>
+      <FooterSection />
     </div>
   );
 }
