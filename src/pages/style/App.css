@@ -1,7 +1,8 @@
 @import './var.css';
 
-.App {
-  padding:5%;
+.HeroContainer {
+  padding-top:10%;
+  padding-right:5%;
   background-color: var(--bg);
   min-height:100vh;
 }

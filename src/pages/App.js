@@ -4,11 +4,13 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './style/App.css';
 // Pages
 import HeroSection from './Hero';
+import NavBar from './Nav';
 
 function App() {
   return (
-    <div>
-      <div className="App">
+    <div id="Home">
+      <NavBar />
+      <div className="HeroContainer">
         <HeroSection />
       </div>
       <div>
