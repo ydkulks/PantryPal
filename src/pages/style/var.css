@@ -1,0 +1,9 @@
+:root{
+  --bg:#ff5757;
+  --white:#ffff;
+}
+
+@font-face {
+  font-family: WaterBrush;
+  src: url('../../assets/WaterBrush-Regular.ttf');
+}

@@ -3,17 +3,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 // CSS
 import './style/App.css';
 // Pages
+import HeroSection from './Hero';
 
 function App() {
   return (
-    <div className="App">
-      <div className="row">
-        <div className="col">
-          <p>Hello world</p>
-        </div>
-        <div className="col">
-          <img src="../assets/bowl_herosection.png" alt="Hero"/>
-        </div>
+    <div>
+      <div className="App">
+        <HeroSection />
+      </div>
+      <div>
+        <h1>Footer</h1>
       </div>
     </div>
   );

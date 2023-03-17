@@ -1,8 +1,9 @@
-:root{
- --background:#ff5757; 
-}
+@import './var.css';
+
 .App {
-  height:20cm;
-  background-color: var(--background);
+  padding:5%;
+  background-color: var(--bg);
+  min-height:100vh;
 }
+
 

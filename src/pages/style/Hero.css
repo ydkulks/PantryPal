@@ -1,0 +1,39 @@
+@import './var.css';
+
+.HeroBowl {
+  padding: 5%;
+  width: 100%;
+  height: auto;
+}
+
+.Title {
+  margin-top: 20px;
+  font-family: WaterBrush;
+  font-size: 10cqmax;
+  color: var(--white);
+  text-align: center;
+}
+
+.Tagline {
+  margin-top: 20px;
+  font-family: sans-serif;
+  font-size: 9mm;
+  color: var(--white);
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.TryBtn {
+  margin-top: 2vw;
+  /*font-size: 2cqmax;*/
+  font-size: 4cqmin;
+  padding: 5% 20%;
+  color: var(--white);
+  background-color: var(--bg);
+  border: solid var(--white) 2px;
+  border-radius: 25mm;
+}
+.TryBtn:hover {
+  background-color: var(--white);
+  color: var(--bg);
+}
