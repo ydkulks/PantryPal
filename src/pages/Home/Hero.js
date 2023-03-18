@@ -1,5 +1,5 @@
 // Images
-import Bowl from '../assets/bowl_herosection.png';
+import Bowl from '../../assets/bowl_herosection.png';
 
 function Try() {
   alert('Hello');

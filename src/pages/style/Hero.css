@@ -20,10 +20,12 @@
 
 .Title {
   margin-top: 20px;
+  /*margin-top: 5cqmax;*/
   font-family: WaterBrush;
   font-size: 10cqmax;
   color: var(--white);
   text-align: center;
+  justify-content: center;
 }
 
 .Tagline {
@@ -40,6 +42,7 @@
   margin-top: 30px;
   font-size: 3cqmin;
   padding: 1.5cqmax 6cqmax;
+  margin-bottom: 10px;
   color: var(--white);
   background-color: transparent;
   border: solid var(--white) 2px;

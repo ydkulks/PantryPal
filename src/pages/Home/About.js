@@ -9,9 +9,14 @@ function About() {
             <p>
               The ultimate solution for meal planning and cooking inspiration!
               With our innovative web app, you can easily discover delicious
-              recipes based on the ingredients you have in your pantry. Simply
-              input the items you have on hand, and we'll provide you with a
-              personalized list of recipes tailored to your taste preferences.
+              recipes based on the ingredients you have in your pantry.
+            </p>
+            <p>
+              Simply input the items you have on hand, and we'll provide you
+              with a personalized list of recipes tailored to your taste
+              preferences.
+            </p>
+            <p>
               Whether you're a busy parent, a student on a budget, or simply
               looking to switch up your meal routine, Pantry Pal has got you
               covered. Say goodbye to wasted groceries and hello to effortless
@@ -23,6 +28,8 @@ function About() {
           </div>
         </div>
       </div>
+      <br />
+      <hr />
     </div>
   );
 }

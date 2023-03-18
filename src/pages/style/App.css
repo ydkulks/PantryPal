@@ -1,5 +1,13 @@
 @import './var.css';
 
+h2 {
+  margin-top: 30px;
+  padding: 1.5cqmax 6cqmax;
+  font-family: WaterBrush;
+  font-size: 10cqmin;
+  color: var(--bg);
+}
+
 .HeroContainer {
   padding-top:10%;
   padding-right:5%;

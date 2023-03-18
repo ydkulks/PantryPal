@@ -1,0 +1,67 @@
+@import './var.css';
+
+.ContactContainer {
+  margin-top: 10px;
+}
+
+.ContactBody {
+  margin: 6cqmax;
+  padding: 3cqmax;
+  font-size: 3cqmin;
+  background-color: var(--bg);
+  border-radius: 25px;
+}
+
+.ContactTitle,
+.ContactText{
+  color: var(--white);
+}
+
+#TextInput,
+#TelInput,
+#FormTxtArea{
+  padding:10px 10px;
+  border-style: none;
+  border-radius: 10px;
+}
+
+#ContactRow{
+  margin-top: 50px;
+}
+
+#FormBtn{
+  margin:5px;
+  padding:10px 25px;
+  color: var(--white);
+  background-color: transparent;
+  border: solid var(--white);
+  border-radius: 25px;
+  margin-bottom: 20px;
+}
+
+#FormBtn:hover{
+  background-color: var(--white);
+  color: var(--bg);
+}
+
+.ContactSocials{
+  height: 5in;
+  /*background-image: url(../../assets/Classic-FrenchCrepes.jpg);*/
+  background-color: var(--white);
+  border-radius: 25px;
+}
+
+#Icon{
+  font-size: 3rem;
+  color: var(--bg);
+  padding-left: 20px;
+}
+
+span{
+  font-weight: bold;
+  color: var(--bg);
+  margin-left: 20px;
+}
+.IconATag{
+  text-decoration: none;
+}

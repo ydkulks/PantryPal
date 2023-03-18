@@ -1,13 +1,5 @@
 @import './var.css';
 
-h2 {
-  margin-top: 30px;
-  padding: 1.5cqmax 6cqmax;
-  font-family: WaterBrush;
-  font-size: 10cqmin;
-  color: var(--bg);
-}
-
 .AboutContainer {
   margin-top: 10px;
 }
@@ -18,14 +10,15 @@ h2 {
 }
 
 .AboutImg{
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
-  background-image: url(../../assets/salad.jpg);
+  background-image: url(../../assets/Classic-FrenchCrepes.jpg);
   background-repeat: no-repeat;
   background-size: 100cqmin;
   /*background-size: cover;*/
   background-position: left;
   background-attachment: fixed;
-  height: 45vh;
+  height: 50vh;
   border-radius: 25px;
 }
