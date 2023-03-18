@@ -5,7 +5,8 @@ nav {
   gap: 2rem;
   justify-content:right;
   background-color: var(--bg);
-  border-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
   padding-top: 10px;
   padding-right: 4cqmax;
 
@@ -24,7 +25,7 @@ ul {
 
 ul a {
   color: var(--white);
-  font-size: 4cqmin;
+  font-size: 2cqmin;
   text-decoration: none;
   letter-spacing: 2px;
   padding: 10px;

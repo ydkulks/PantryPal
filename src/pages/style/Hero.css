@@ -8,6 +8,16 @@
   height: auto;
 }
 
+/* Parallax image */
+/*#HeroBowl {
+  display: flex;
+  flex-direction: column;
+  background-image: url(../../assets/bowl_herosection.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}*/
+
 .Title {
   margin-top: 20px;
   font-family: WaterBrush;
@@ -26,18 +36,17 @@
   letter-spacing: 2px;
 }
 
-.TryBtn {
+.LoginBtn {
   margin-top: 30px;
-  /*font-size: 2cqmax;*/
-  font-size: 4cqmin;
+  font-size: 3cqmin;
   padding: 1.5cqmax 6cqmax;
   color: var(--white);
-  background-color: var(--bg);
+  background-color: transparent;
   border: solid var(--white) 2px;
   border-radius: 25mm;
-  border-width:4px;
+  border-width: 4px;
 }
-.TryBtn:hover {
+.LoginBtn:hover {
   background-color: var(--white);
   color: var(--bg);
 }

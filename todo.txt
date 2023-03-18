@@ -2,7 +2,14 @@ To-do
 ######
 Front-end
 =========
-  Basic front-end
+  About
+    Parallax image
+  Contact us
+  Search Recipes
+    Recipe Details : Ingredients, Instructions
+    Save and Organize : Favorite recipes
+    Shopping List : Create list for shopping
+  User Accounts(login) : To save preferences
 
 Back-end
 ========
@@ -10,7 +17,15 @@ Back-end
   Search: Searching recipe with ingredients
 
 Completed
+#########
+Front-end
 =========
+  Navigation bar
+  Hero section
+  Footer
+
+Back-end
+========
   API: spoonacular / Edamam / Food2Fork
     https://spoonacular.com/food-api/docs
   Dotfile: For hiding API key

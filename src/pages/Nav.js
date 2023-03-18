@@ -1,5 +1,3 @@
-import './style/Nav.css';
-
 function NavBar() {
   return (
     <div>
@@ -9,7 +7,16 @@ function NavBar() {
             <a href="#Home">Home</a>
           </li>
           <li>
-            <a href="/about">About</a>
+            <a href="/recipe">Recipe</a>
+          </li>
+          <li>
+            <a href="#About">About</a>
+          </li>
+          <li>
+            <a href="#Contact">Contact</a>
+          </li>
+          <li>
+            <a href="/signup">Sign up</a>
           </li>
         </ul>
       </nav>

@@ -10,4 +10,10 @@
   border-bottom-right-radius: 20px;
 }
 
+.AboutContainer {
+  padding-top:10%;
+  padding-right:5%;
+  padding-left:5%;
+  min-height:100vh;
+}
 

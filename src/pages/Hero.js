@@ -1,5 +1,3 @@
-// CSS
-import './style/Hero.css';
 // Images
 import Bowl from '../assets/bowl_herosection.png';
 
@@ -9,22 +7,24 @@ function Try() {
 
 function HeroSection() {
   return (
-    <div className="row">
-      <div className="col-md">
-        <h1 className="Title">Pantry Pal</h1>
-        <br />
-        <p className="Tagline">
-          Unlock endless meal possibilities with <br />
-          Pantry Pal, your ultimate kitchen companion
-        </p>
-        <div className="col text-center">
-          <button className="TryBtn" onClick={Try}>
-            Try Now
-          </button>
+    <div className="HeroContainer">
+      <div className="row">
+        <div className="col-lg">
+          <h1 className="Title">Pantry Pal</h1>
+          <br />
+          <p className="Tagline">
+            Unlock endless meal possibilities with <br />
+            Pantry Pal, your ultimate kitchen companion
+          </p>
+          <div className="col text-center">
+            <button className="LoginBtn" onClick={Try}>
+              Login
+            </button>
+          </div>
         </div>
-      </div>
-      <div className="col-md">
-        <img className="HeroBowl" src={Bowl} alt="Hero" />
+        <div className="col-lg">
+          <img className="HeroBowl" src={Bowl} alt="Hero" />
+        </div>
       </div>
     </div>
   );
