@@ -17,7 +17,8 @@
   color: var(--white);
 }
 
-#TextInput,
+#Name,
+#Email,
 #TelInput,
 #FormTxtArea{
   padding:10px 10px;
@@ -46,20 +47,20 @@
 
 .ContactSocials{
   height: 5in;
-  /*background-image: url(../../assets/Classic-FrenchCrepes.jpg);*/
-  background-color: var(--white);
+  border: solid var(--white);
+  background-color: transparent;
   border-radius: 25px;
 }
 
 #Icon{
   font-size: 3rem;
-  color: var(--bg);
+  color: var(--white);
   padding-left: 20px;
 }
 
 span{
-  font-weight: bold;
-  color: var(--bg);
+  /*font-weight: bold;*/
+  color: var(--white);
   margin-left: 20px;
 }
 .IconATag{

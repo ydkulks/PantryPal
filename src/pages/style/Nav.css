@@ -1,6 +1,6 @@
 @import './var.css';
 
-nav {
+.NavBar {
   display: flex;
   gap: 2rem;
   justify-content:right;
@@ -16,14 +16,14 @@ nav {
   width: 100%;
 }
 
-ul {
+.NavList {
   list-style: none;
   display: flex;
   gap: 1rem;
   padding-right: 5cqmax;
 }
 
-ul a {
+.NavBtn{
   color: var(--white);
   font-size: 2cqmin;
   text-decoration: none;
@@ -32,8 +32,8 @@ ul a {
   border-radius: 10px;
 }
 
-ul a:hover {
-  /*text-decoration: underline;*/
+.NavBtn:hover{
   background-color: var(--white);
   color: var(--bg);
 }
+

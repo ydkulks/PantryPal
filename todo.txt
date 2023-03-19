@@ -1,5 +1,6 @@
-To-do
-######
+###########
+## To-do ##
+###########
 Front-end
 =========
   Search Recipes
@@ -14,11 +15,13 @@ Back-end
   Database for storing user recipe
   Search: Searching recipe with ingredients
 
-Completed
-#########
+###############
+## Completed ##
+###############
 Front-end
 =========
   Navigation bar
+  Dark mode option
   Hero section
   About
     Parallax image

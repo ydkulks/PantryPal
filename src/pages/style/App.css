@@ -25,3 +25,14 @@ h2 {
   min-height:100vh;
 }
 
+/* Dark mode setting */
+.DarkMode{
+  background-color: var(--black);
+  color: var(--grey);
+}
+
+#DModeIcon{
+  color: var(--white);
+  margin: 5px;
+}
+
