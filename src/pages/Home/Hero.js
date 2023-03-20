@@ -1,10 +1,6 @@
 // Images
 import Bowl from '../../assets/bowl_herosection.png';
 
-function Try() {
-  alert('Hello');
-}
-
 function HeroSection() {
   return (
     <div className="HeroContainer">
@@ -17,9 +13,9 @@ function HeroSection() {
             Pantry Pal, your ultimate kitchen companion
           </p>
           <div className="col text-center">
-            <button className="LoginBtn" onClick={Try}>
-              Login
-            </button>
+            <a href="/Signup">
+              <button className="LoginBtn">Login</button>
+            </a>
           </div>
         </div>
         <div className="col-lg">

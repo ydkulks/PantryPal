@@ -9,6 +9,7 @@
   padding: 3cqmax;
   font-size: 3cqmin;
   background-color: var(--bg);
+  border:solid var(--bg);
   border-radius: 25px;
 }
 
@@ -33,32 +34,38 @@
 #FormBtn{
   margin:5px;
   padding:10px 25px;
-  color: var(--white);
-  background-color: transparent;
-  border: solid var(--white);
+  color: var(--bg);
+  background-color: var(--white);
+  border: solid;
   border-radius: 25px;
   margin-bottom: 20px;
 }
 
 #FormBtn:hover{
-  background-color: var(--white);
-  color: var(--bg);
+  background-color: var(--bg);
+  color: var(--white);
+}
+
+.leaflet-container{
+  height: 400px;
+  border-radius: 25px;
+  z-index: 0;
 }
 
 .ContactSocials{
-  height: 5in;
-  border: solid var(--white);
+  /*height: 5in;*/
+  border: solid var(--bg);
   background-color: transparent;
   border-radius: 25px;
 }
 
 #Icon{
-  font-size: 3rem;
+  font-size: 2rem;
   color: var(--white);
-  padding-left: 20px;
+  /*padding-left: 20px;*/
 }
 
-span{
+.IconText{
   /*font-weight: bold;*/
   color: var(--white);
   margin-left: 20px;

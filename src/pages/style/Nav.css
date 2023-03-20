@@ -3,37 +3,57 @@
 .NavBar {
   display: flex;
   gap: 2rem;
-  justify-content:right;
+  color: var(--white);
+  /*justify-content: center;*/
   background-color: var(--bg);
-  border-bottom-left-radius:10px;
-  border-bottom-right-radius:10px;
-  padding-top: 10px;
-  padding-right: 4cqmax;
+  border: solid var(--bg);
+  border-bottom-left-radius:25px;
+  border-bottom-right-radius:25px;
+  /*padding-bottom: 10px;*/
+  /*box-shadow: 5px 10px 5px rgba(0,0,0,0.1);*/
 
   /* Sticky nav */
   position: fixed;
-  top: 0;
+  /*top: 0;*/
   width: 100%;
+  z-index: 100;
+}
+
+.NavBar:active{
+  box-shadow: 5px 10px 5px rgba(0,0,0,0.1);
+}
+
+.Toggle{
+  font-size: 3vh;
+  color: var(--bg);
+  background-color: var(--bg);
+  --bs-navbar-toggler-border-color: none;
 }
 
 .NavList {
   list-style: none;
   display: flex;
   gap: 1rem;
-  padding-right: 5cqmax;
+  padding-right: 5cqmin;
 }
 
 .NavBtn{
+  display: flex;
+  justify-content:center;
+  width: 100%;
   color: var(--white);
-  font-size: 2cqmin;
+  font-size: 2vh;
   text-decoration: none;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   padding: 10px;
   border-radius: 10px;
 }
 
 .NavBtn:hover{
-  background-color: var(--white);
-  color: var(--bg);
+  background-color: rgba(255,255,255,0.3);
+  color: var(--white);
 }
 
+#DModeIcon{
+  color: var(--white);
+}

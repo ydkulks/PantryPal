@@ -1,12 +1,23 @@
-:root{
-  --bg:#ff5757;
-  --white:#ffff;
+:root {
+  --bg: #ff5757;
+  --white: #ffff;
   --black: #1d2a35;
   --dark: #2b3945;
   --grey: #f1f1f1;
+  /*--leaflet-tiles-filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);*/
 }
 
 @font-face {
   font-family: WaterBrush;
   src: url('../../assets/WaterBrush-Regular.ttf');
 }
+
+/* Dark Mode Leaflet */
+/*@media (prefers-color-scheme: dark) {*/
+    /*.leaflet-tiles {*/
+        /*filter:var(--map-tiles-filter, none);*/
+	/*}*/
+  /*.leaflet-container {*/
+        /*background: #303030;*/
+    /*}*/
+/*}*/

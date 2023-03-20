@@ -1,5 +1,12 @@
 @import './var.css';
 
+*{
+  z-index: auto;
+}
+
+#Home{
+  z-index: 999;
+}
 h2 {
   margin-top: 30px;
   padding: 1.5cqmax 6cqmax;
@@ -16,6 +23,7 @@ h2 {
   min-height:100vh;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+  box-shadow: 5px 10px 5px rgba(0,0,0,0.1);
 }
 
 .AboutContainer {

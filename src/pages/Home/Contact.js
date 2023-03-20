@@ -1,3 +1,9 @@
+// Leaflet.js
+import {MapContainer, TileLayer} from 'react-leaflet';
+import 'leaflet/dist/leaflet.css';
+
+const position = [12.9716, 77.5946];
+
 function Contact() {
   return (
     <div id="Contact" className="ContactContainer">
@@ -14,7 +20,7 @@ function Contact() {
         </p>
         {/* Contact Form */}
         <div id="ContactRow" className="row">
-          <div className="col-md-8">
+          <div className="col-lg">
             <form action="" method="post">
               {/* Contact Form Name */}
               <input
@@ -58,39 +64,48 @@ function Contact() {
               <input type="reset" id="FormBtn" />
             </form>
           </div>
+          <div className="col-lg">
+            <div className="map" id="map">
+              <MapContainer center={position} zoom={10} scrollWheelZoom={true}>
+                <TileLayer
+                  attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+              </MapContainer>
+            </div>
+          </div>
           {/* Contact Links */}
-          <div className="col-md-4">
+          <div className="col-lg-1">
             <div className="ContactSocials">
-              {/* Contact Email */}
-              <a className="IconATag" href="mailto:info@example.com">
-                <i className="bi bi-envelope-fill" id="Icon"></i>
-                <span>Email us</span>
-              </a>
-              <br />
-              {/* Contact phone */}
-              <i className="bi bi-telephone-fill" id="Icon"></i>
-              <span>+91 1234567890</span> <br />
-              {/* Contact Location */}
-              <a
-                className="IconATag"
-                href="https://goo.gl/maps/kQqPAEZsay1rx6RA6"
-              >
-                <i className="bi bi-geo-alt-fill" id="Icon"></i>
-                <span>Location</span>
-              </a>
-              <br />
-              {/* Contact Facebook */}
-              <a className="IconATag" href="https://facebook.com">
-                <i className="bi bi-facebook" id="Icon"></i>
-                <span>Facebook</span>
-              </a>
-              <br />
-              {/* Contact Git-hub */}
-              <a className="IconATag" href="https://github.com/ydkulks">
-                <i className="bi bi-github" id="Icon"></i>
-                <span>Github</span>
-              </a>
-              <br />
+              <div className="d-flex justify-content-center flex-wrap">
+                {/* Contact Email */}
+                <div className="p-3">
+                  <a className="IconATag" href="mailto:info@example.com">
+                    <i className="bi bi-envelope-fill" id="Icon"></i>
+                  </a>
+                </div>
+                {/* Contact Location */}
+                <div className="p-3">
+                  <a
+                    className="IconATag"
+                    href="https://goo.gl/maps/kQqPAEZsay1rx6RA6"
+                  >
+                    <i className="bi bi-geo-alt-fill" id="Icon"></i>
+                  </a>
+                </div>
+                {/* Contact Facebook */}
+                <div className="p-3">
+                  <a className="IconATag" href="https://facebook.com">
+                    <i className="bi bi-facebook" id="Icon"></i>
+                  </a>
+                </div>
+                {/* Contact Git-hub */}
+                <div className="p-3">
+                  <a className="IconATag" href="https://github.com/ydkulks">
+                    <i className="bi bi-github" id="Icon"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
