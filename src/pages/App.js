@@ -4,11 +4,12 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 // Routes
 import {BrowserRouter as BR, Routes, Route} from 'react-router-dom';
 // CSS
-import './style/App.css';
-import './style/Nav.css';
-import './style/Footer.css';
+import './style/Root/App.css';
+import './style/Root/Nav.css';
+import './style/Root/Footer.css';
 //import '../style/Signup.css;'
 // Pages
+import NotFound from './NotFound';
 import NavBar from './Nav';
 import Home from './Home/Home';
 import FooterSection from './Footer';
@@ -21,7 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Signup" element={<Signup />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterSection />
     </BR>

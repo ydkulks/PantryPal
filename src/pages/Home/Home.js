@@ -1,8 +1,8 @@
 //CSS
-import '../style/Hero.css';
-import '../style/About.css';
-import '../style/Services.css';
-import '../style/Contact.css';
+import '../style/Home/Hero.css';
+import '../style/Home/About.css';
+import '../style/Home/Services.css';
+import '../style/Home/Contact.css';
 // Pages
 import HeroSection from './Hero';
 import About from './About';

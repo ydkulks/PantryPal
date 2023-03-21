@@ -1,4 +1,4 @@
-@import './var.css';
+@import '../Root/var.css';
 
 .ServicesBody {
   margin: 6cqmax;
@@ -28,13 +28,13 @@
 }
 
 #col1{
-  background-image: url(../../assets/clafoutis.jpg);
+  background-image: url(../../../assets/clafoutis.jpg);
 }
 #col2{
-  background-image: url(../../assets/salad.jpg);
+  background-image: url(../../../assets/salad.jpg);
 }
 #col3{
-  background-image: url(../../assets/pantry-1.jpg);
+  background-image: url(../../../assets/pantry-1.jpg);
 }
 
 .ServicesText {

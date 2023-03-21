@@ -12,7 +12,9 @@ function BNavBar() {
     <Navbar className="NavBar" expand="lg">
     <Container className="NavContainer">
         <Navbar.Brand>
-          <p> </p>
+    <a className="NavBrandA" href="/">
+          <p className="NavBrand">Pantry Pal</p>
+    </a>
         </Navbar.Brand>
         <Navbar.Toggle className="Toggle" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

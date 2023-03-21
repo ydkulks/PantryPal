@@ -23,6 +23,18 @@
   box-shadow: 5px 10px 5px rgba(0,0,0,0.1);
 }
 
+.NavBrandA{
+  text-decoration: none;
+}
+
+.NavBrand{
+  color: var(--white);
+  font-family: WaterBrush;
+  font-size: 2.5vh;
+  margin-right: 5cqmax;
+  margin-left: -5vw;
+}
+
 .Toggle{
   font-size: 3vh;
   color: var(--bg);

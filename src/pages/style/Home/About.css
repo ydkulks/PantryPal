@@ -1,4 +1,4 @@
-@import './var.css';
+@import '../Root/var.css';
 
 .AboutContainer {
   margin-top: 10px;
@@ -13,7 +13,7 @@
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  background-image: url(../../assets/Classic-FrenchCrepes.jpg);
+  background-image: url(../../../assets/Classic-FrenchCrepes.jpg);
   background-repeat: no-repeat;
   background-size: 100cqmin;
   /*background-size: cover;*/
