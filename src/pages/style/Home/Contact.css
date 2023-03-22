@@ -59,6 +59,14 @@
   border-radius: 25px;
 }
 
+#ContactStatusMessage{
+  color: var(--white);
+  text-align: center;
+  font-style: italic;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+
 #Icon{
   font-size: 2rem;
   color: var(--white);

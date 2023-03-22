@@ -1,10 +1,53 @@
 // Leaflet.js
 import {MapContainer, TileLayer} from 'react-leaflet';
+import {useState} from 'react';
 import 'leaflet/dist/leaflet.css';
 
+// Leaflet Map coordinates [Bangalore]
 const position = [12.9716, 77.5946];
 
 function Contact() {
+  // Form hooks
+  const [name, setName] = useState(null);
+  const [email, setEmail] = useState(null);
+  const [phone, setPhone] = useState(null);
+  const [message, setMessage] = useState(null);
+
+  //function to send contact form data to server
+  const SubmitForm = async event => {
+    event.preventDefault();
+    document.getElementById('ContactForm').reset();
+    var Msg = document.getElementById('ContactStatusMessage');
+    // data collected by hooks from form
+    const formData = {
+      name: name,
+      email: email,
+      phone: phone,
+      message: message,
+      timestamp: Date(),
+    };
+    //console.log(formData);
+    try {
+      const request = await fetch('http://localhost:5000/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const response = await request.json();
+      console.log(response);
+      if (response.status === 200) {
+        Msg.innerText = 'Form sent successfully!';
+      } else {
+        Msg.innerText = 'Server Error!';
+      }
+    } catch (err) {
+      console.log('Error:', err);
+      Msg.innerText = 'Error while sending form!';
+    }
+  };
+
   return (
     <div id="Contact" className="ContactContainer">
       <div className="ContactBody">
@@ -21,13 +64,14 @@ function Contact() {
         {/* Contact Form */}
         <div id="ContactRow" className="row">
           <div className="col-lg">
-            <form action="" method="post">
+            <form id="ContactForm" onSubmit={SubmitForm}>
               {/* Contact Form Name */}
               <input
                 type="text"
                 className="form-control"
                 id="Name"
                 placeholder="Name"
+                onChange={e => setName(e.target.value)}
                 required
               />
               <br />
@@ -37,6 +81,7 @@ function Contact() {
                 className="form-control"
                 id="Email"
                 placeholder="Email"
+                onChange={e => setEmail(e.target.value)}
                 required
               />
               <br />
@@ -46,6 +91,7 @@ function Contact() {
                 className="form-control"
                 id="TelInput"
                 pattern="[0-9].{9,}"
+                onChange={e => setPhone(e.target.value)}
                 placeholder="Phone number"
               />
               <br />
@@ -56,6 +102,7 @@ function Contact() {
                 rows="4"
                 cols="40"
                 placeholder="How can we help you?"
+                onChange={e => setMessage(e.target.value)}
                 required
               ></textarea>
               <br />
@@ -63,6 +110,7 @@ function Contact() {
               <input type="submit" id="FormBtn" value="Submit" />
               <input type="reset" id="FormBtn" />
             </form>
+            <div id="ContactStatusMessage"></div>
           </div>
           <div className="col-lg">
             <div className="map" id="map">

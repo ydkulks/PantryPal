@@ -33,3 +33,9 @@ Back-end
   API: spoonacular / Edamam / Food2Fork
     https://spoonacular.com/food-api/docs
   Dotfile: For hiding API key
+
+Notes
+######
+Form Back-end:
+-------------
+https://www.techomoro.com/submit-a-form-data-to-rest-api-in-a-react-app/
