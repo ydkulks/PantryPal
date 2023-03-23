@@ -1,8 +1,6 @@
 // React modules
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-// CSS module
-import './pages/style/Root/index.css';
 // Pages
 import App from './pages/App';
 

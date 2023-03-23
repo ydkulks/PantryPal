@@ -106,7 +106,7 @@ function Signup() {
           <div id="SignupMsg"></div>
           <p>
             Already on Pantry Pal?
-            <a href="/Signup"> Login</a>
+            <a href="/Login"> Login</a>
           </p>
         </div>
       </div>

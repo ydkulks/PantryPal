@@ -13,7 +13,7 @@ function HeroSection() {
             Pantry Pal, your ultimate kitchen companion
           </p>
           <div className="col text-center">
-            <a href="/Signup">
+            <a href="/Login">
               <button className="LoginBtn">Login</button>
             </a>
           </div>

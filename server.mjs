@@ -51,8 +51,18 @@ app.post('/api/signup', (req, res) => {
     if (doc.length === 0) {
       su.insert(req.body, (err, newDoc) => {});
       res.send({status: 201, signup: 'Created'});
-    }else{
-      res.send({status: 409, signup: 'Conflict'})
+    } else {
+      res.send({status: 409, signup: 'Conflict'});
+    }
+  });
+});
+
+app.post('/api/login', (req, res) => {
+  su.find({name: req.body.name, password: req.body.password}, (err, doc) => {
+    if (doc.length === 0) {
+      res.send({status: 404, login: 'notFound'});
+    } else {
+      res.send({status: 200, login: 'Ok'});
     }
   });
 });

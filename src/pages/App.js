@@ -8,12 +8,14 @@ import './style/Root/App.css';
 import './style/Root/Nav.css';
 import './style/Root/Footer.css';
 import './style/Signup/Signup.css';
+import './style/Login/Login.css';
 // Pages
 import NotFound from './NotFound';
 import NavBar from './Nav';
 import Home from './Home/Home';
 import FooterSection from './Footer';
 import Signup from './Signup/Signup';
+import Login from './Login/Login';
 
 function App() {
   return (
@@ -22,6 +24,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Signup" element={<Signup />} />
+        <Route path="/Login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterSection />

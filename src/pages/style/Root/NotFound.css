@@ -46,6 +46,6 @@
 }
 
 .NFBtn:hover{
-  background-color: transparent;
+  background-color: var(--white);
   color: var(--bg);
 }
