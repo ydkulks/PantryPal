@@ -7,7 +7,7 @@ import {BrowserRouter as BR, Routes, Route} from 'react-router-dom';
 import './style/Root/App.css';
 import './style/Root/Nav.css';
 import './style/Root/Footer.css';
-//import '../style/Signup.css;'
+import './style/Signup/Signup.css';
 // Pages
 import NotFound from './NotFound';
 import NavBar from './Nav';

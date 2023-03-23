@@ -8,7 +8,11 @@ import fetch from 'node-fetch';
 
 // NEDB Database
 import Datastore from 'nedb';
-const db = new Datastore({filename:'./database/contactForm.db',autoload:true});
+const cf = new Datastore({
+  filename: './database/contactForm.db',
+  autoload: true,
+});
+const su = new Datastore({filename: './database/signUp.db', autoload: true});
 
 //For accessing API_KEY from .files
 import dotenv from 'dotenv';
@@ -23,7 +27,7 @@ app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });
 
-// Calling 'spoonacular' API 
+// Calling 'spoonacular' API
 const apiKey = process.env.API_KEY;
 const search = async () => {
   const params = `?apiKey=${apiKey}&query=burger`;
@@ -37,6 +41,18 @@ const search = async () => {
 // Endpoint for Contact form
 app.post('/api/contact', (req, res) => {
   //console.log(req.body);
-  db.insert(req.body,(err,newDocs)=>{});
-  res.send({status: 200});
+  cf.insert(req.body, (err, newDocs) => {});
+  res.send({status: 200, contactForm: 'Submitted'});
+});
+
+app.post('/api/signup', (req, res) => {
+  su.find({name: req.body.name, email: req.body.email}, (err, doc) => {
+    // if not found, doc's value is []
+    if (doc.length === 0) {
+      su.insert(req.body, (err, newDoc) => {});
+      res.send({status: 201, signup: 'Created'});
+    }else{
+      res.send({status: 409, signup: 'Conflict'})
+    }
+  });
 });
