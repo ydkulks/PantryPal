@@ -32,15 +32,17 @@ function Signup() {
           if (result.status === 201) {
             formReset.reset();
             Msg.innerText = 'You have successfully signed up';
-          } else if(result.status === 409){
+            window.location.replace('/Login');
+          } else if (result.status === 409) {
             formReset.reset();
             Msg.innerText = 'User already exists!';
-          } else{
+          } else {
             formReset.reset();
             Msg.innerText = 'Something went wrong!';
           }
         } catch (err) {
           console.log(err);
+          Msg.innerText = 'Cannot connect to server! Try again later';
         }
       } else {
         formReset.reset();
@@ -100,8 +102,7 @@ function Signup() {
               required
             />
             <br />
-            <input type="submit" id="SignupBtn" value="Submit" />
-            <input type="reset" id="SignupBtn" />
+            <input type="submit" id="SignupBtn" value="Sign Up" />
           </form>
           <div id="SignupMsg"></div>
           <p>

@@ -33,6 +33,7 @@ const Login = () => {
       }
     } catch (err) {
       console.log(err);
+      Msg.innerText = 'Cannot connect to server! Try again later';
     }
   };
   return (
@@ -56,19 +57,21 @@ const Login = () => {
             {/* Login Form Password */}
             <input
               type="password"
-              id="SignupInput"
+              id="LoginInput"
               className="form-control"
               placeholder="Password"
               onChange={e => setPass(e.target.value)}
               required
             />
             <br />
-            <input type="submit" id="LoginBtn" value="Submit" />
-            <input type="reset" id="LoginBtn" />
+            <input type="submit" id="LoginBtn" value="Login" />
           </form>
           <div id="LoginMsg"></div>
-          <p>New to PantryPal?</p>
-          <a href="/signup">Sign-up</a>
+          <a href="/signup"> Forgot password?</a>
+          <p>
+            New to PantryPal?
+            <a href="/signup"> Sign-up</a>
+          </p>
         </div>
       </div>
     </div>

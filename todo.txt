@@ -5,13 +5,15 @@ Front-end
 =========
   Search Recipes
     Recipe Details : Ingredients, Instructions
+  User Dashboard : To save preferences
     Save and Organize : Favorite recipes
     Shopping List : Create list for shopping
-  User Accounts(login) : To save preferences
 
 Back-end
 ========
-  Back-end for contact form
+  Encrypt password (bcrypt)
+  Login with back-end
+  Password reset
   Database for storing user recipe
   Search: Searching recipe with ingredients
 
@@ -27,15 +29,23 @@ Front-end
     Parallax image
   Contact us
   Footer
+  404 not found page
+  Sign-up
+  Login
 
 Back-end
 ========
   API: spoonacular / Edamam / Food2Fork
     https://spoonacular.com/food-api/docs
   Dotfile: For hiding API key
+  Back-end for contact form
+  Sign-up with back-end
 
 Notes
 ######
 Form Back-end:
 -------------
 https://www.techomoro.com/submit-a-form-data-to-rest-api-in-a-react-app/
+
+User Authentication:
+-------------------
