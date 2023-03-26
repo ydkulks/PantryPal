@@ -1,0 +1,11 @@
+.RecipesContainer{
+  padding:2cqmax;
+  min-height: 100vh;
+}
+.RecipesTitle{
+  margin-top: 7vh;
+  font-family: WaterBrush;
+  color: var(--bg);
+  font-size:10;
+  /*text-align: center;*/
+}

@@ -3,16 +3,17 @@
 ###########
 Front-end
 =========
+  Drop-down menu under Home in Nav
   Search Recipes
     Recipe Details : Ingredients, Instructions
-  User Dashboard : To save preferences
+  User dashboard(front-end)
     Save and Organize : Favorite recipes
     Shopping List : Create list for shopping
 
 Back-end
 ========
-  Encrypt password (bcrypt)
-  Login with back-end
+  Restricted routing
+  User dashboard(back-end)
   Password reset
   Database for storing user recipe
   Search: Searching recipe with ingredients
@@ -40,12 +41,47 @@ Back-end
   Dotfile: For hiding API key
   Back-end for contact form
   Sign-up with back-end
+  Encrypt password (bcrypt)
+  Login with back-end
 
-Notes
-######
+###########
+## Notes ##
+###########
+MERN:
+-----
+  It stands for MongoDB, Express, React, Node.js.
+
 Form Back-end:
 -------------
-https://www.techomoro.com/submit-a-form-data-to-rest-api-in-a-react-app/
+  https://www.techomoro.com/submit-a-form-data-to-rest-api-in-a-react-app/
 
 User Authentication:
 -------------------
+  Making sure user is logging-in with correct credentials.
+
+JWT:
+----
+  JsonWebToken is used for user authorisation and privileges
+  https://www.youtube.com/watch?v=mbsmsi7l3r4&t=608s
+
+  Generate secret key:
+  -------------------
+    $ node
+    > require('crypto').randomBytes(64).toString('hex');
+
+  How JWT works:
+  -------------
+    0.1) User signs-in and credentials are stored in database after encrypting
+       the password using 'bcrypt' module in Express.
+    0.2) User logs-in and user credentials are 'authenticated' from Database.
+    1) Using JWT, a token is created with privileges and other details attached
+       to it and encrypted for security.
+       Ex: jwt.sign();
+    2) This token is sent to user after login was successful. This must be
+       stored as cookies , in localStorage or state variable.
+    3) Token must be sent to the server in order to access protected pages.
+      3.1) Token can be sent through fetch (not recommended).
+      3.2) In React, create a 'state' variable to store token which send the 
+           token to server for each page which are protected.
+    4) Using middleware function, which is created by the developer and does not
+       come with the JWT module, the token is decrypted for authorisation.

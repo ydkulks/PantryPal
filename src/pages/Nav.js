@@ -14,7 +14,7 @@ function BNavBar() {
     }
   }, []);
   const darkMode = () => {
-      body.classList.toggle('DarkMode');
+    body.classList.toggle('DarkMode');
     if (darkModeEnabled === 'true') {
       localStorage.setItem('darkModeEnabled', 'false');
     } else {

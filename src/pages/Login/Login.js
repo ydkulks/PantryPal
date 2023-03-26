@@ -23,8 +23,9 @@ const Login = () => {
         body: JSON.stringify(formData),
       });
       const result = await response.json();
-      console.log(result);
+      console.log(result.token);
       if (result.status === 200) {
+        localStorage.setItem('token',result.token);
         formReset.reset();
         Msg.innerText = 'You have successfully Logged-in';
       } else {

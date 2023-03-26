@@ -4,26 +4,20 @@
 import express from 'express';
 const app = express();
 const port = 5000;
-//import fetch from 'node-fetch';
-import bcrypt from 'bcrypt';
-// NEDB Database
-import Datastore from 'nedb';
+//import fetch from 'node-fetch'; //Fetch
+import Datastore from 'nedb'; //DB
 const cf = new Datastore({
   filename: './database/contactForm.db',
   autoload: true,
 });
 const su = new Datastore({filename: './database/signUp.db', autoload: true});
-//For accessing API_KEY from .files
-import dotenv from 'dotenv';
+import dotenv from 'dotenv'; //Env
 dotenv.config();
-//For allowing cross origin API calls
-import cors from 'cors';
+import cors from 'cors'; //CORS
 app.use(cors());
 app.use(express.json());
-
-app.listen(port, () => {
-  console.log(`Listening to port ${port}`);
-});
+import bcrypt from 'bcrypt'; //Encrypt
+import jwt from 'jsonwebtoken'; //Auth
 
 // Calling 'spoonacular' API
 /*
@@ -63,17 +57,52 @@ app.post('/api/signup', async (req, res) => {
   });
 });
 
+const ENV = process.env;
 app.post('/api/login', (req, res) => {
+  // Authentication
   su.find({name: req.body.name}, async (err, doc) => {
     if (doc.length === 0) {
       res.send({status: 404, login: 'Not Found'});
     } else {
-      const DCrypt = await bcrypt.compare(req.body.password, doc[0].password);
-      if (DCrypt === true) {
-        res.send({status: 200, login: 'Ok'});
+      const Decrypt = await bcrypt.compare(req.body.password, doc[0].password);
+
+      if (Decrypt === true) {
+        // Authorisation
+        // Assigning token to user
+        const accessToken = jwt.sign(doc[0].name, ENV.ACCESS_TOKEN_SECRET);
+        res.send({
+          status: 200,
+          login: 'Ok',
+          token: accessToken,
+        });
       } else {
         res.send({status: 401, login: 'Unauthorized'});
       }
     }
   });
+});
+
+const Authorisation = (req, res, next) => {
+  const authHeader = req.headers['authorisation'];
+  const token = authHeader && authHeader.split(' ')[1];
+  if (token === null) {
+    return res.send({status: 401});
+  } else {
+    jwt.verify(token, ENV.ACCESS_TOKEN_SECRET, (err, decoded) => {
+      if (err) {
+        res.status(401).json({error: 'Unauthorized'});
+      } else {
+        req.user = decoded;
+        next();
+      }
+    });
+  }
+};
+
+app.get('/api/protected', Authorisation, (req, res) => {
+  res.status(200);
+});
+
+app.listen(port, () => {
+  console.log(`Listening to port ${port}`);
 });

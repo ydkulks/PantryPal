@@ -13,8 +13,8 @@ function HeroSection() {
             Pantry Pal, your ultimate kitchen companion
           </p>
           <div className="col text-center">
-            <a href="/Login">
-              <button className="LoginBtn">Login</button>
+            <a href="/Recipes">
+              <button className="HeroBtn">Recipes</button>
             </a>
           </div>
         </div>
