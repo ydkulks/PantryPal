@@ -3,8 +3,9 @@
 ###########
 Front-end
 =========
-  Logout
+  Forgot password
   Password reset
+  Delete account
   Search Recipes
     Search bar
     Filter
@@ -16,9 +17,10 @@ Front-end
 
 Back-end
 ========
-  Logout
-  User dashboard(back-end)
+  Forgot password
   Password reset
+  Delete account
+  User dashboard(back-end)
   Database for storing user recipe
   Search: Searching recipe with ingredients
 
@@ -39,6 +41,7 @@ Front-end
   Login
   Drop-down menu under Home in Footer
   Terms & Conditions
+  Logout
 
 Back-end
 ========
@@ -50,6 +53,7 @@ Back-end
   Encrypt password (bcrypt)
   Login with back-end
   Restricted routing
+  Logout
 
 ###########
 ## Notes ##

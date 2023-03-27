@@ -28,6 +28,7 @@ const Login = () => {
         localStorage.setItem('token',result.token);
         formReset.reset();
         Msg.innerText = 'You have successfully Logged-in';
+        window.location.href='/Recipes';
       } else {
         formReset.reset();
         Msg.innerText = 'Incorrect login credentials!';

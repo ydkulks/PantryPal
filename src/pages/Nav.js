@@ -21,6 +21,9 @@ function BNavBar() {
       localStorage.setItem('darkModeEnabled', 'true');
     }
   };
+  const Logout = () => {
+    localStorage.removeItem('token');
+  }
   return (
     <Navbar className="NavBar" expand="lg">
       <Container className="NavContainer">
@@ -44,7 +47,7 @@ function BNavBar() {
             <Nav.Link className="NavBtn" href="/Login">
               Login
             </Nav.Link>
-            <Nav.Link className="NavBtn" href="/Logout">
+            <Nav.Link className="NavBtn" onClick={Logout}>
               Logout
             </Nav.Link>
             <Nav.Link className="NavBtn" href="#" onClick={darkMode}>
