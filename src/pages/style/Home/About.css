@@ -6,7 +6,8 @@
 
 .AboutBody {
   margin: 3cqmax;
-  font-size: 3cqmin;
+  /*font-size: 3cqmin;*/
+  font-size: 1.5rem;
 }
 
 .AboutImg{

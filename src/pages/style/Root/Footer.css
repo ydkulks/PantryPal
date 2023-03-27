@@ -8,3 +8,61 @@
   border-top-right-radius: 20px;
   padding:20px;
 }
+
+.FooterTitle{
+  font-family: WaterBrush;
+}
+
+.FooterNav{
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.FooterNav a {
+  text-decoration: none;
+  color: var(--white);
+}
+
+.FooterNav a:hover{
+  text-decoration: underline;
+}
+
+.DropDown{
+  float: left;
+  overflow: hidden;
+}
+.DropDown:hover{
+  border-radius: 5px;
+  background-color: var(--white);
+  color: var(--bg);
+}
+.FooterBtn{
+  border: none;
+  outline: none;
+  background-color: inherit;
+  color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.DropDownContent{
+  text-align: left;
+  background-color: var(--white);
+  border-radius: 5px;
+  min-width: 9rem;
+  padding: 10px;
+  margin: 1px;
+  display: none;
+  position: absolute;
+  z-index: 1;
+}
+
+.DropDownContent a{
+  color: var(--bg);
+}
+
+.DropDown:hover
+.DropDownContent{
+  display: block;
+}

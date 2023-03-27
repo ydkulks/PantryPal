@@ -35,17 +35,17 @@ function BNavBar() {
             <Nav.Link className="NavBtn" href="/#Home">
               Home
             </Nav.Link>
-            <Nav.Link className="NavBtn" href="/#About">
-              About
+            <Nav.Link className="NavBtn" href="/Recipes">
+              Recipes
             </Nav.Link>
-            <Nav.Link className="NavBtn" href="/#Services">
-              Services
+            <Nav.Link className="NavBtn" href="/ShoppingList">
+              ShoppingList
             </Nav.Link>
-            <Nav.Link className="NavBtn" href="/#Contact">
-              Contact
+            <Nav.Link className="NavBtn" href="/Login">
+              Login
             </Nav.Link>
-            <Nav.Link className="NavBtn" href="/Signup">
-              Signup
+            <Nav.Link className="NavBtn" href="/Logout">
+              Logout
             </Nav.Link>
             <Nav.Link className="NavBtn" href="#" onClick={darkMode}>
               <i id="DModeIcon" className="bi bi-circle-half" />

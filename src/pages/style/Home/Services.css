@@ -3,7 +3,8 @@
 .ServicesBody {
   margin: 6cqmax;
   padding: 3cqmax;
-  font-size: 3cqmin;
+  /*font-size: 3cqmin;*/
+  font-size: 1.5rem;
 }
 .ServicesCard {
   background-size: cover;

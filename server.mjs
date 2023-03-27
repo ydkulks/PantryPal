@@ -48,6 +48,7 @@ app.post('/api/signup', async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password: hashedPwd,
+        role: basic,
       };
       su.insert(record, (err, newDoc) => {});
       res.send({status: 201, signup: 'Created'});
@@ -88,11 +89,11 @@ const Authorisation = (req, res, next) => {
   if (token === null) {
     return res.send({status: 401});
   } else {
-    jwt.verify(token, ENV.ACCESS_TOKEN_SECRET, (err, decoded) => {
+    jwt.verify(token, ENV.ACCESS_TOKEN_SECRET, (err, name) => {
       if (err) {
         res.status(401).json({error: 'Unauthorized'});
       } else {
-        req.user = decoded;
+        req.user = name;
         next();
       }
     });
@@ -100,7 +101,16 @@ const Authorisation = (req, res, next) => {
 };
 
 app.get('/api/protected', Authorisation, (req, res) => {
-  res.status(200);
+  // Checking role of the user
+  su.find({name: req.user}, (err, doc) => {
+    if (doc.length === 0) return res.status(401);
+    if (doc[0].role === 'admin') {
+      return res.status(200).send({role: 'admin'});
+    }
+    if(doc[0].role === 'basic'){
+      return res.status(200).send({role: 'basic'});
+    }
+  });
 });
 
 app.listen(port, () => {

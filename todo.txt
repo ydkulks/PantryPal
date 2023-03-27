@@ -3,8 +3,12 @@
 ###########
 Front-end
 =========
-  Drop-down menu under Home in Nav
+  Logout
+  Password reset
   Search Recipes
+    Search bar
+    Filter
+    Categories
     Recipe Details : Ingredients, Instructions
   User dashboard(front-end)
     Save and Organize : Favorite recipes
@@ -12,7 +16,7 @@ Front-end
 
 Back-end
 ========
-  Restricted routing
+  Logout
   User dashboard(back-end)
   Password reset
   Database for storing user recipe
@@ -33,6 +37,8 @@ Front-end
   404 not found page
   Sign-up
   Login
+  Drop-down menu under Home in Footer
+  Terms & Conditions
 
 Back-end
 ========
@@ -43,6 +49,7 @@ Back-end
   Sign-up with back-end
   Encrypt password (bcrypt)
   Login with back-end
+  Restricted routing
 
 ###########
 ## Notes ##

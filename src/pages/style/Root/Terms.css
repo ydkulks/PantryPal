@@ -1,0 +1,23 @@
+@import './var.css';
+
+.TermsContainer{
+  padding: 5cqmax;
+}
+
+.TermsCard{
+  /*border:solid var(--bg);*/
+  margin-left: 5cqmax;
+  margin-right: 5cqmax;
+}
+
+.TermsPoints{
+  /*font-family: WaterBrush;*/
+  font-size: 2rem;
+  font-style: italic;
+  padding-top: 5cqmax;
+  color: var(--bg);
+}
+
+.TermsContent{
+  font-size: 1.5rem;
+}
