@@ -47,6 +47,7 @@ Back-end
 ========
   API: spoonacular / Edamam / Food2Fork
     https://spoonacular.com/food-api/docs
+    https://rapidapi.com/spoonacular/api/recipe-food-nutrition
   Dotfile: For hiding API key
   Back-end for contact form
   Sign-up with back-end

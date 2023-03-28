@@ -4,7 +4,7 @@
 import express from 'express';
 const app = express();
 const port = 5000;
-//import fetch from 'node-fetch'; //Fetch
+import fetch from 'node-fetch'; //Fetch
 import Datastore from 'nedb'; //DB
 const cf = new Datastore({
   filename: './database/contactForm.db',
@@ -19,23 +19,18 @@ app.use(express.json());
 import bcrypt from 'bcrypt'; //Encrypt
 import jwt from 'jsonwebtoken'; //Auth
 
-// Calling 'spoonacular' API
-/*
-const apiKey = process.env.API_KEY;
-const search = async () => {
-  const params = `?apiKey=${apiKey}&query=burger`;
-  const url = `https://api.spoonacular.com/recipes/complexSearch${params}`;
-  const request = await fetch(url);
-  const data = await request.json();
-  console.log(data);
-};
-search();
-*/
-
-// Endpoint for Contact form
+/******* End-point index *******/
+// Contact form
+// Sign-up
+// Login
+// Authorisation
+// Protected route
+// Account deletion
+// Dashboard
+// Recipes API
 app.post('/api/contact', (req, res) => {
   //console.log(req.body);
-  cf.insert(req.body, (err, newDocs) => {});
+  cf.insert(req.body);
   res.send({status: 200, contactForm: 'Submitted'});
 });
 
@@ -91,7 +86,7 @@ const Authorisation = (req, res, next) => {
   } else {
     jwt.verify(token, ENV.ACCESS_TOKEN_SECRET, (err, name) => {
       if (err) {
-        res.status(401).json({error: 'Unauthorized'});
+        return res.status(401).json({error: 'Unauthorized'});
       } else {
         req.user = name;
         next();
@@ -103,14 +98,47 @@ const Authorisation = (req, res, next) => {
 app.get('/api/protected', Authorisation, (req, res) => {
   // Checking role of the user
   su.find({name: req.user}, (err, doc) => {
+    if (err) console.log(err);
     if (doc.length === 0) return res.status(401);
     if (doc[0].role === 'admin') {
-      return res.status(200).send({role: 'admin'});
+      return res.send({status: 200, role: 'admin'});
     }
-    if(doc[0].role === 'basic'){
-      return res.status(200).send({role: 'basic'});
+    if (doc[0].role === 'basic') {
+      return res.send({status: 200, role: 'basic'});
     }
   });
+});
+
+app.get('/api/deleteAccount', Authorisation, (req, res) => {
+  su.remove({name: req.user});
+  return res.send({status: 200, message: 'account deleted'});
+});
+
+app.get('/api/dashboard', Authorisation, (req, res) => {
+  su.find({name: req.user}, (err, doc) => {
+    if (err) console.log(err);
+    if (doc.length === 0) return res.status(401);
+    if (doc[0].role === 'admin') {
+      return res.status(200).send({
+        name: doc[0].name,
+        role: doc[0].role,
+      });
+    }
+    if (doc[0].role === 'basic') {
+      return res.status(200).send({name: doc[0].name});
+    }
+  });
+});
+
+// Calling 'spoonacular' API
+const apiKey = process.env.API_KEY;
+app.post('/api/recipes', async (req, res) => {
+  const query = req.body.query;
+  const params = `?apiKey=${apiKey}&query=${query}&number=1`;
+  const url = `https://api.spoonacular.com/recipes/complexSearch${params}`;
+  const request = await fetch(url);
+  const data = await request.json();
+  res.status(200).send(data);
 });
 
 app.listen(port, () => {

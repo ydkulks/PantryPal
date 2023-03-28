@@ -1,7 +1,8 @@
-import {useState} from 'react';
+//import {useState} from 'react';
 
 const Authorize = async () => {
-  const {isAuthed, setIsAuth} = useState(null);
+  //const {isAuthed, setIsAuth} = useState(null);
+  var isAuthed = null;
   const token = localStorage.getItem('token');
   try {
     const res = await fetch('http://localhost:5000/api/protected', {
@@ -10,15 +11,20 @@ const Authorize = async () => {
       },
     });
     const data = await res.json();
-    //console.log(data);
+    //console.log(data.status);
     if (data.status === 200) {
-      setIsAuth(true);
+      //setIsAuth(true);
+      isAuthed = true;
+      return isAuthed;
+    }else{
+      //setIsAuth(false);
+      isAuthed = false;
       return isAuthed;
     }
   } catch (error) {
     // Redirect to when server is not responding
-    console.error(error);
-    window.location.href = '/Login';
+    console.error('Error in Authorize:',error);
+    return window.location.href = '/Login';
   }
 };
 
@@ -28,13 +34,13 @@ const AuthUser = Component => {
       // Authorise user
       const Auth = Authorize();
       if (Auth === false) {
-        window.location.href = '/Login';
+        return window.location.href = '/Login';
       } else {
         return <Component />;
       }
     } catch (error) {
-      console.error(error);
-      window.location.href = '/Login';
+      console.error('Error in AuthUser:',error);
+      return window.location.href = '/Login';
     }
   };
   return withAuth;

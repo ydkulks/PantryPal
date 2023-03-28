@@ -49,7 +49,7 @@ const Login = () => {
             <input
               type="text"
               className="form-control"
-              id="LoginInput"
+              id="LoginInputName"
               placeholder="Name"
               onChange={e => setName(e.target.value)}
               pattern=".{4,}"
@@ -59,7 +59,7 @@ const Login = () => {
             {/* Login Form Password */}
             <input
               type="password"
-              id="LoginInput"
+              id="LoginInputPwd"
               className="form-control"
               placeholder="Password"
               onChange={e => setPass(e.target.value)}

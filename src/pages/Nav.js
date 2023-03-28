@@ -19,10 +19,13 @@ function BNavBar() {
       localStorage.setItem('darkModeEnabled', 'false');
     } else {
       localStorage.setItem('darkModeEnabled', 'true');
+      window.location.href="/Login";
     }
   };
   const Logout = () => {
     localStorage.removeItem('token');
+    prompt('Confirm logging out!');
+    window.location.href='/';
   }
   return (
     <Navbar className="NavBar" expand="lg">
