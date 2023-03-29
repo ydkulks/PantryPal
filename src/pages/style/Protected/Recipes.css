@@ -10,22 +10,88 @@
   /*text-align: center;*/
 }
 
+.RecipesIntro{
+  font-size: 1.5rem;
+  padding: 2rem;
+}
+
 #RecipesSearchContainer{
   display:flex;
   justify-content:flex-end;
+  font-size: 1.5rem;
 }
-#RecipesSearchBar{
-  border: none;
+#RecipesSearchBar,
+#RecipesSearchBar:focus{
+  border: solid var(--bg);
+  outline: none;
   border-radius: 10px 0px 0px 10px;
-  padding: 5px;
+  padding: 10px;
   width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 #RecipesSearchBtn{
   border: none;
   color:var(--white);
   background-color:var(--bg);
-  padding: 5px;
   border-radius: 0px 10px 10px 0px;
-  width: 50px;
+  width: 60px;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+#RecipesResult{
+  border-radius: 25px;
+  margin-top: 2rem;
+  padding: 3rem;
+}
+
+.row{
+  background-color: rgba(200,0,0,0.2);
+  border-radius: 25px;
+}
+
+#RecipesResult div h3{
+  text-align: center;
+  font-family: WaterBrush;
+  font-size: 4rem;
+  padding-top: 50px;
+}
+
+#RecipesResult div a{
+  font-size: 1.5rem;
+  text-decoration: none;
+  border: solid var(--bg);
+  border-radius: 10px;
+  color: var(--white);
+  padding: 1.2rem 2rem;
+  display: block;
+  margin-left: 20%;
+  margin-right: 20%;;
+  text-align: center;
+  background-color: var(--bg);
+}
+
+#RecipesResult div a:hover{
+  background-color: var(--white);
+  color: var(--bg);
+}
+
+#RecipesResult div p{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+#RecipesResult div img{
+  border: solid var(--bg);
+  border-radius: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  /*width: 100%;*/
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

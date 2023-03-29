@@ -3,13 +3,14 @@
 ###########
 Front-end
 =========
+  Scroll-back-to-top button
   Forgot password
   Password reset
   Delete account
+  Page system to display more results (optional)
   Search Recipes
-    Search bar
-    Filter
-    Categories
+    [Done] Search bar
+    Categories (cuisine,diet,type)
     Recipe Details : Ingredients, Instructions
   User dashboard(front-end)
     Save and Organize : Favorite recipes
