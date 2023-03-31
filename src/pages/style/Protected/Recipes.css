@@ -49,10 +49,11 @@
   padding: 3rem;
 }
 
-.row{
-  background-color: rgba(200,0,0,0.2);
-  border-radius: 25px;
-}
+/*#RecipesResult div{*/
+  /*background-color: rgba(200,0,0,0.1);*/
+  /*border-radius: 25px;*/
+  /*margin: 1rem;*/
+/*}*/
 
 #RecipesResult div h3{
   text-align: center;

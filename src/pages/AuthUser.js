@@ -2,7 +2,7 @@
 
 const Authorize = async () => {
   //const {isAuthed, setIsAuth} = useState(null);
-  var isAuthed = null;
+  var isAuthed = false;
   const token = localStorage.getItem('token');
   try {
     const res = await fetch('http://localhost:5000/api/protected', {
@@ -11,7 +11,7 @@ const Authorize = async () => {
       },
     });
     const data = await res.json();
-    //console.log(data.status);
+    console.log(data.status);
     if (data.status === 200) {
       //setIsAuth(true);
       isAuthed = true;

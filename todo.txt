@@ -1,6 +1,11 @@
 ###########
 ## To-do ##
 ###########
+
+-----------BUG--------
+1) After logging out, when token is not stored in localStorage, user can still
+  access protected route. Server throws 401 error but user is not redirected.
+
 Front-end
 =========
   Scroll-back-to-top button

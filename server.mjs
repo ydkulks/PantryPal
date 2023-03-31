@@ -99,7 +99,7 @@ app.get('/api/protected', Authorisation, (req, res) => {
   // Checking role of the user
   su.find({name: req.user}, (err, doc) => {
     if (err) console.log(err);
-    if (doc.length === 0) return res.status(401);
+    if (doc.length === 0) return res.send({status: 401});
     if (doc[0].role === 'admin') {
       return res.send({status: 200, role: 'admin'});
     }
