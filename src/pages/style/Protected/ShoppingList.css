@@ -1,0 +1,13 @@
+@import '../Root/var.css';
+
+.SListContainer{
+  padding:2cqmax;
+  min-height: 100vh;
+}
+
+.SListTitle{
+  margin-top: 7vh;
+  font-family: WaterBrush;
+  color: var(--bg);
+  font-size:10;
+}

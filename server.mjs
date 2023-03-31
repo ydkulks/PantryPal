@@ -134,7 +134,7 @@ app.get('/api/dashboard', Authorisation, (req, res) => {
 const apiKey = process.env.API_KEY;
 app.post('/api/recipes', async (req, res) => {
   const query = req.body.query;
-  const params = `?apiKey=${apiKey}&query=${query}&number=20`;
+  const params = `?apiKey=${apiKey}&query=${query}&number=2`;
   const url = `https://api.spoonacular.com/recipes/complexSearch${params}`;
   const request = await fetch(url);
   const data = await request.json();

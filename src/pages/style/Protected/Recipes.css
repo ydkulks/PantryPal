@@ -1,3 +1,4 @@
+@import '../Root/var.css';
 .RecipesContainer{
   padding:2cqmax;
   min-height: 100vh;
@@ -13,6 +14,7 @@
 .RecipesIntro{
   font-size: 1.5rem;
   padding: 2rem;
+  margin-left: 5vw;
 }
 
 #RecipesSearchContainer{
@@ -23,6 +25,7 @@
 #RecipesSearchBar,
 #RecipesSearchBar:focus{
   border: solid var(--bg);
+  border-right: none;
   outline: none;
   border-radius: 10px 0px 0px 10px;
   padding: 10px;
@@ -33,9 +36,10 @@
 }
 
 #RecipesSearchBtn{
-  border: none;
-  color:var(--white);
-  background-color:var(--bg);
+  border: solid var(--bg);
+  border-left: none;
+  color:var(--bg);
+  background-color:var(--white);
   border-radius: 0px 10px 10px 0px;
   width: 60px;
   display: block;
@@ -43,17 +47,17 @@
   margin-right: auto;
 }
 
+#RecipesSearchBtn:hover,
+#RecipesSearchBtn i:hover{
+  background-color: var(--bg);
+  color: var(--white);
+}
+
 #RecipesResult{
   border-radius: 25px;
   margin-top: 2rem;
   padding: 3rem;
 }
-
-/*#RecipesResult div{*/
-  /*background-color: rgba(200,0,0,0.1);*/
-  /*border-radius: 25px;*/
-  /*margin: 1rem;*/
-/*}*/
 
 #RecipesResult div h3{
   text-align: center;
@@ -90,8 +94,8 @@
   border: solid var(--bg);
   border-radius: 25px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  /*margin-left: auto;*/
+  margin: auto;
   /*width: 100%;*/
   margin-top: 2rem;
   margin-bottom: 2rem;

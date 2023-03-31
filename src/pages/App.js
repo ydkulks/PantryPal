@@ -11,6 +11,7 @@ import './style/Root/Terms.css';
 import './style/Signup/Signup.css';
 import './style/Login/Login.css';
 import './style/Protected/Recipes.css';
+import './style/Protected/ShoppingList.css';
 // Pages
 import NotFound from './NotFound';
 import NavBar from './Nav';
@@ -20,6 +21,7 @@ import Terms from './Terms';
 import Signup from './Signup/Signup';
 import Login from './Login/Login';
 import Recipes from './Protected/Recipes';
+import SList from './Protected/ShoppingList';
 
 function App() {
   return (
@@ -31,6 +33,7 @@ function App() {
         <Route path="/Login" element={<Login />} />
         <Route path="/Recipes" element={<Recipes />} />
         <Route path="/Terms" element={<Terms />} />
+        <Route path="/ShoppingList" element={<SList />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterSection />

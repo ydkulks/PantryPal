@@ -42,7 +42,7 @@ function Footer() {
             <a href="/Recipes">Recipes</a>
           </li>
           <li>
-            <a href="/">Shopping List</a>
+            <a href="/ShoppingList">Shopping List</a>
           </li>
           <li>
             <a href="/Login">Login</a>

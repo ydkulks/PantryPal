@@ -8,7 +8,6 @@
 
 Front-end
 =========
-  Scroll-back-to-top button
   Forgot password
   Password reset
   Delete account
@@ -48,6 +47,7 @@ Front-end
   Drop-down menu under Home in Footer
   Terms & Conditions
   Logout
+  Scroll-back-to-top button
 
 Back-end
 ========
