@@ -11,11 +11,13 @@ Front-end
   Forgot password
   Password reset
   Delete account
-  Page system to display more results (optional)
+  user recipe
+  Page system to display more results
   Search Recipes
     [Done] Search bar
-    Categories (cuisine,diet,type)
+    [Done] Categories (cuisine,diet,type)
     Recipe Details : Ingredients, Instructions
+      Get Analyzed Recipe Instructions
   User dashboard(front-end)
     Save and Organize : Favorite recipes
     Shopping List : Create list for shopping
@@ -25,9 +27,15 @@ Back-end
   Forgot password
   Password reset
   Delete account
-  User dashboard(back-end)
   Database for storing user recipe
-  Search: Searching recipe with ingredients
+  Page system to display more results
+  Search Recipes
+    [Done] Search bar
+    [Done] Categories (cuisine,diet,type)
+    Recipe Details : Ingredients, Instructions
+  User dashboard(front-end)
+    Save and Organize : Favorite recipes
+    Shopping List : Create list for shopping
 
 ###############
 ## Completed ##

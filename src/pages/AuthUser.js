@@ -11,7 +11,7 @@ const Authorize = async () => {
       },
     });
     const data = await res.json();
-    console.log(data.status);
+    //console.log(data.status);
     if (data.status === 200) {
       //setIsAuth(true);
       isAuthed = true;

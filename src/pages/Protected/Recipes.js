@@ -2,10 +2,18 @@ import AuthUser from '../AuthUser';
 import React, {useState} from 'react';
 
 const Recipes = () => {
-  const [query, setQuery] = useState('burger');
+  const [query, setQuery] = useState('');
+  const [diet, setDiet] = useState(null);
+  const [cuisine, setCuisine] = useState(null);
+  //const [offset, setOffset] = useState(0);
   //var data;
   const getRecipes = async () => {
-    const Query = {query: `${query}`};
+    const Query = {
+      query: `${query}`,
+      diet: `${diet}`,
+      cuisine: `${cuisine}`,
+      //offset: `${offset}`,
+    };
     const url = 'http://localhost:5000/api/recipes';
     const options = {
       method: 'POST',
@@ -16,7 +24,7 @@ const Recipes = () => {
     };
     const res = await fetch(url, options);
     const data = await res.json();
-    //console.log(data);
+    console.log(data);
     const resultsContainer = document.getElementById('RecipesResult');
     resultsContainer.innerHTML = ' ';
     if (data.results.length === 0) {
@@ -91,16 +99,52 @@ const Recipes = () => {
         great resource for discovering new and exciting dishes. So start
         exploring, and get ready to whip up some culinary magic in your kitchen!
       </p>
-      <div id="RecipesSearchContainer">
-        <input
-          id="RecipesSearchBar"
-          type="text"
-          placeholder="Search"
-          onChange={e => setQuery(e.target.value)}
-        />
-        <button id="RecipesSearchBtn" onClick={getRecipes}>
-          <i className="bi bi-search"></i>
-        </button>
+      <div className="form-row">
+        <div className="col">
+          <div id="RecipesSearchContainer">
+            <input
+              id="RecipesSearchBar"
+              type="text"
+              className="form-control-md"
+              placeholder="Search"
+              onChange={e => setQuery(e.target.value)}
+            />
+            <button id="RecipesSearchBtn" onClick={getRecipes}>
+              <i className="bi bi-search"></i>
+            </button>
+            <select onChange={e => setDiet(e.target.value)} name="Diet">
+              <option value="" selected disabled hidden>
+                Diet
+              </option>
+              <option value="GlutenFree">Gluten Free</option>
+              <option value="Ketogenic">Ketogenic</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+              <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Pescetarian">Pescetarian</option>
+              <option value="Paleo">Paleo</option>
+              <option value="Primal">Primal</option>
+              <option value="LowFODMAP">LowFODMAP</option>
+              <option value="Whole30">Whole30</option>
+            </select>
+            <select onChange={e => setCuisine(e.target.value)} name="Cuisine">
+              <option value="" selected disabled hidden>
+                Cuisine
+              </option>
+              <option value="Ameriacn">Ameriacn</option>
+              <option value="British">British</option>
+              <option value="Chinese">Chinese</option>
+              <option value="European">European</option>
+              <option value="French">French</option>
+              <option value="Indian">Indian</option>
+              <option value="Italian">Italian</option>
+              <option value="Japanese">Japanese</option>
+              <option value="Mexican">Mexican</option>
+              <option value="MiddleEastern">MiddleEastern</option>
+            </select>
+          </div>
+        </div>
       </div>
       <div>
         <div id="RecipesResult">

@@ -8,7 +8,6 @@
   font-family: WaterBrush;
   color: var(--bg);
   font-size:10;
-  /*text-align: center;*/
 }
 
 .RecipesIntro{
@@ -18,10 +17,19 @@
 }
 
 #RecipesSearchContainer{
-  display:flex;
-  justify-content:flex-end;
-  font-size: 1.5rem;
+  font-size: 1rem;
+  margin-left: 2cqmax;
+  margin-right: 2cqmax;
 }
+
+#RecipesSearchContainer select{
+  border: solid var(--bg);
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+  width: 100px;
+}
+
 #RecipesSearchBar,
 #RecipesSearchBar:focus{
   border: solid var(--bg);
@@ -29,20 +37,19 @@
   outline: none;
   border-radius: 10px 0px 0px 10px;
   padding: 10px;
-  width: 300px;
-  display: block;
-  margin-left: auto;
+  width: 20cqmax;
+  margin-left: 2cqmax;
   margin-right: 0;
 }
 
 #RecipesSearchBtn{
   border: solid var(--bg);
   border-left: none;
+  padding: 10px;
   color:var(--bg);
   background-color:var(--white);
   border-radius: 0px 10px 10px 0px;
   width: 60px;
-  display: block;
   margin-left: 0;
   margin-right: auto;
 }

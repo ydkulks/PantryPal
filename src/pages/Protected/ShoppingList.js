@@ -1,9 +1,10 @@
-const ShoppingList = () =>{
-  return(
+import AuthUser from '../AuthUser';
+const ShoppingList = () => {
+  return (
     <div className="SListContainer">
-    <h2 className="SListTitle">Shopping List</h2>
+      <h2 className="SListTitle">Shopping List</h2>
     </div>
-  )
-}
+  );
+};
 
-export default ShoppingList;
+export default AuthUser(ShoppingList);
