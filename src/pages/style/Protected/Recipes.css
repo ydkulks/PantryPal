@@ -85,6 +85,7 @@
   margin-right: 20%;;
   text-align: center;
   background-color: var(--bg);
+  cursor: pointer;
 }
 
 #RecipesResult div a:hover{

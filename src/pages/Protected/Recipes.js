@@ -6,7 +6,13 @@ const Recipes = () => {
   const [diet, setDiet] = useState(null);
   const [cuisine, setCuisine] = useState(null);
   //const [offset, setOffset] = useState(0);
-  //var data;
+  
+  // Recipes Instructions
+  const GetInstructions = async ID => {
+    localStorage.setItem('RecipeID',ID);
+    window.location = '/Instructions';
+  };
+  // Get Recipes
   const getRecipes = async () => {
     const Query = {
       query: `${query}`,
@@ -57,13 +63,13 @@ const Recipes = () => {
       div2.className = 'col-lg';
       const para = document.createElement('p');
       const link = document.createElement('a');
-      link.className = 'RecipesLink';
-      link.href = '#';
-      link.textContent = 'Instructions';
 
       title.textContent = result.title;
-      img.src = result.image;
+      link.className = 'RecipesLink';
+      link.addEventListener('click', () => GetInstructions(result.id));
+      link.textContent = 'Instructions';
       para.textContent = `ID: ${result.id}`;
+      img.src = result.image;
 
       div1.appendChild(title);
       div1.appendChild(para);

@@ -21,6 +21,7 @@ import Terms from './Terms';
 import Signup from './Signup/Signup';
 import Login from './Login/Login';
 import Recipes from './Protected/Recipes';
+import Instructions from './Protected/Instructions';
 import SList from './Protected/ShoppingList';
 
 function App() {
@@ -32,8 +33,9 @@ function App() {
         <Route path="/Signup" element={<Signup />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Recipes" element={<Recipes />} />
-        <Route path="/Terms" element={<Terms />} />
+        <Route path="/Instructions" element={<Instructions />} />
         <Route path="/ShoppingList" element={<SList />} />
+        <Route path="/Terms" element={<Terms />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <FooterSection />

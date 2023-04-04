@@ -28,6 +28,7 @@ import jwt from 'jsonwebtoken'; //Auth
 // Account deletion
 // Dashboard
 // Recipes API
+// Instructions API
 app.post('/api/contact', (req, res) => {
   //console.log(req.body);
   cf.insert(req.body);
@@ -143,6 +144,15 @@ app.post('/api/recipes', async (req, res) => {
   const data = await request.json();
   res.status(200).send(data);
 });
+
+app.post('/api/instructions',async (req,res) => {
+  const id = req.body.id;
+  const params = `${id}/analyzedInstructions?apiKey=${apiKey}`;
+  const url = `https://api.spoonacular.com/recipes/${params}`;
+  const request = await fetch(url);
+  const data = await request.json();
+  res.status(200).send(data);
+})
 
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
