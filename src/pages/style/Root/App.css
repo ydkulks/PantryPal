@@ -1,3 +1,11 @@
+@import './Nav.css';
+@import './Footer.css';
+@import './Terms.css';
+@import '../Signup/Signup.css';
+@import '../Login/Login.css';
+@import '../Protected/Recipes.css';
+@import '../Protected/Instructions.css';
+@import '../Protected/ShoppingList.css';
 @import './var.css';
 
 *{

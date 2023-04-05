@@ -5,13 +5,14 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import {BrowserRouter as BR, Routes, Route} from 'react-router-dom';
 // CSS
 import './style/Root/App.css';
-import './style/Root/Nav.css';
-import './style/Root/Footer.css';
-import './style/Root/Terms.css';
-import './style/Signup/Signup.css';
-import './style/Login/Login.css';
-import './style/Protected/Recipes.css';
-import './style/Protected/ShoppingList.css';
+//import './style/Root/Nav.css';
+//import './style/Root/Footer.css';
+//import './style/Root/Terms.css';
+//import './style/Signup/Signup.css';
+//import './style/Login/Login.css';
+//import './style/Protected/Recipes.css';
+//import './style/Protected/Instructions.css';
+//import './style/Protected/ShoppingList.css';
 // Pages
 import NotFound from './NotFound';
 import NavBar from './Nav';

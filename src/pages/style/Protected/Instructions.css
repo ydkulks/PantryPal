@@ -1,0 +1,49 @@
+@import '../Root/var.css';
+
+.InstContainer{
+  padding:2cqmax;
+  min-height: 100vh;
+}
+.InstTitle{
+  margin-top: 7vh;
+  font-family: WaterBrush;
+  color: var(--bg);
+  font-size:10;
+}
+
+.InstContent{
+  margin-left: 5cqmax;
+  margin-right: 5cqmax;
+}
+
+#step{
+  border: solid var(--bg);
+}
+
+.InstContent div{
+  margin: 5px;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.InstContent h3{
+  text-align: center;
+  margin-top: 2cqmax;
+  color: var(--bg);
+  font-family: WaterBrush;
+  font-size: 5cqmax;
+}
+
+.heading{
+  /*display: block;*/
+  /*justify-content: center;*/
+  color: var(--bg);
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.InstContent p {
+  font-size: 1.2rem;
+  display: block;
+  justify-content:center;
+}
