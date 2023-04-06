@@ -87,7 +87,7 @@ const Authorisation = (req, res, next) => {
   } else {
     jwt.verify(token, ENV.ACCESS_TOKEN_SECRET, (err, name) => {
       if (err) {
-        return res.status(401).json({error: 'Unauthorized'});
+        return res.send({status: 401, error: 'Unauthorized'});
       } else {
         req.user = name;
         next();
@@ -145,14 +145,14 @@ app.post('/api/recipes', async (req, res) => {
   res.status(200).send(data);
 });
 
-app.post('/api/instructions',async (req,res) => {
+app.post('/api/instructions', async (req, res) => {
   const id = req.body.id;
   const params = `${id}/analyzedInstructions?apiKey=${apiKey}`;
   const url = `https://api.spoonacular.com/recipes/${params}`;
   const request = await fetch(url);
   const data = await request.json();
   res.status(200).send(data);
-})
+});
 
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);

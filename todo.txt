@@ -1,11 +1,6 @@
 ###########
 ## To-do ##
 ###########
-
------------BUG--------
-1) After logging out, when token is not stored in localStorage, user can still
-  access protected route. Server throws 401 error but user is not redirected.
-
 Front-end
 =========
   Forgot password
@@ -13,11 +8,6 @@ Front-end
   Delete account
   user recipe
   Page system to display more results
-  Search Recipes
-    [Done] Search bar
-    [Done] Categories (cuisine,diet,type)
-    Recipe Details : Ingredients, Instructions
-      Get Analyzed Recipe Instructions
   User dashboard(front-end)
     Save and Organize : Favorite recipes
     Shopping List : Create list for shopping
@@ -29,10 +19,6 @@ Back-end
   Delete account
   Database for storing user recipe
   Page system to display more results
-  Search Recipes
-    [Done] Search bar
-    [Done] Categories (cuisine,diet,type)
-    Recipe Details : Ingredients, Instructions
   User dashboard(front-end)
     Save and Organize : Favorite recipes
     Shopping List : Create list for shopping
@@ -56,6 +42,11 @@ Front-end
   Terms & Conditions
   Logout
   Scroll-back-to-top button
+  Search Recipes
+    Search bar
+    Categories (cuisine,diet,type)
+    Recipe Details : Ingredients, Instructions
+      Get Analyzed Recipe Instructions
 
 Back-end
 ========
@@ -69,6 +60,11 @@ Back-end
   Login with back-end
   Restricted routing
   Logout
+  Search Recipes
+    Search bar
+    Categories (cuisine,diet,type)
+    Recipe Details : Ingredients, Instructions
+      Get Analyzed Recipe Instructions
 
 ###########
 ## Notes ##

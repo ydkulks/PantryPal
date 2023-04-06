@@ -1,7 +1,7 @@
-//import {useState} from 'react';
+import {lazy} from 'react';
+import {Suspense} from 'react';
 
 const Authorize = async () => {
-  //const {isAuthed, setIsAuth} = useState(null);
   var isAuthed = false;
   const token = localStorage.getItem('token');
   try {
@@ -13,18 +13,20 @@ const Authorize = async () => {
     const data = await res.json();
     //console.log(data.status);
     if (data.status === 200) {
-      //setIsAuth(true);
       isAuthed = true;
       return isAuthed;
-    }else{
-      //setIsAuth(false);
+    }
+    if (data.status === 401) {
       isAuthed = false;
-      return isAuthed;
+      return (window.location.href = '/Login');
+    } else {
+      isAuthed = false;
+      return (window.location.href = '/Login');
     }
   } catch (error) {
     // Redirect to when server is not responding
-    console.error('Error in Authorize:',error);
-    return window.location.href = '/Login';
+    console.error('Error in Authorize:', error);
+    return (window.location.href = '/Login');
   }
 };
 
@@ -32,15 +34,23 @@ const AuthUser = Component => {
   const withAuth = () => {
     try {
       // Authorise user
-      const Auth = Authorize();
-      if (Auth === false) {
-        return window.location.href = '/Login';
-      } else {
-        return <Component />;
-      }
+      const AuthLoader = lazy(async () => {
+        const Auth = await Authorize();
+        if (Auth) {
+          return {default: Component};
+        }
+        if (!Auth) {
+          return (window.location.href = '/Login');
+        }
+      });
+      return (
+        <Suspense fallback="Loading...">
+          <AuthLoader />
+        </Suspense>
+      );
     } catch (error) {
-      console.error('Error in AuthUser:',error);
-      return window.location.href = '/Login';
+      console.error('Error in AuthUser:', error);
+      return (window.location.href = '/Login');
     }
   };
   return withAuth;
