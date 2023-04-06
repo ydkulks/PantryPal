@@ -6,11 +6,11 @@ const Recipes = () => {
   const [diet, setDiet] = useState(null);
   const [cuisine, setCuisine] = useState(null);
   //const [offset, setOffset] = useState(0);
-  
+
   // Recipes Instructions
-  const GetInstructions = async (ID,NAME) => {
-    localStorage.setItem('RecipeID',ID);
-    localStorage.setItem('RecipeNAME',NAME);
+  const GetInstructions = async (ID, NAME) => {
+    localStorage.setItem('RecipeID', ID);
+    localStorage.setItem('RecipeNAME', NAME);
     window.location = '/Instructions';
   };
   // Get Recipes
@@ -67,7 +67,9 @@ const Recipes = () => {
 
       title.textContent = result.title;
       link.className = 'RecipesLink';
-      link.addEventListener('click', () => GetInstructions(result.id,result.title));
+      link.addEventListener('click', () =>
+        GetInstructions(result.id, result.title),
+      );
       link.textContent = 'Instructions';
       para.textContent = `ID: ${result.id}`;
       img.src = result.image;
@@ -119,8 +121,11 @@ const Recipes = () => {
             <button id="RecipesSearchBtn" onClick={getRecipes}>
               <i className="bi bi-search"></i>
             </button>
-            <select onChange={e => setDiet(e.target.value)} name="Diet">
-              <option value="" selected disabled hidden>
+            <select
+              onChange={e => setDiet(e.target.value)}
+              defaultValue={'DEFAULT'}
+            >
+              <option value="DEFAULT" disabled>
                 Diet
               </option>
               <option value="GlutenFree">Gluten Free</option>
@@ -135,8 +140,11 @@ const Recipes = () => {
               <option value="LowFODMAP">LowFODMAP</option>
               <option value="Whole30">Whole30</option>
             </select>
-            <select onChange={e => setCuisine(e.target.value)} name="Cuisine">
-              <option value="" selected disabled hidden>
+            <select
+              onChange={e => setCuisine(e.target.value)}
+              defaultValue={'DEFAULT'}
+            >
+              <option value="DEFAULT" disabled>
                 Cuisine
               </option>
               <option value="Ameriacn">Ameriacn</option>
