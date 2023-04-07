@@ -8,9 +8,10 @@ const Recipes = () => {
   //const [offset, setOffset] = useState(0);
 
   // Recipes Instructions
-  const GetInstructions = async (ID, NAME) => {
+  const GetInstructions = async (ID, NAME,IMG) => {
     localStorage.setItem('RecipeID', ID);
     localStorage.setItem('RecipeNAME', NAME);
+    localStorage.setItem('RecipeIMG', IMG);
     window.location = '/Instructions';
   };
   // Get Recipes
@@ -68,7 +69,7 @@ const Recipes = () => {
       title.textContent = result.title;
       link.className = 'RecipesLink';
       link.addEventListener('click', () =>
-        GetInstructions(result.id, result.title),
+        GetInstructions(result.id, result.title, result.image),
       );
       link.textContent = 'Instructions';
       para.textContent = `ID: ${result.id}`;

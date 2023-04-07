@@ -3,6 +3,7 @@ import {useEffect} from 'react';
 
 const Instructions = () => {
   const NAME = localStorage.getItem('RecipeNAME');
+  const IMG = localStorage.getItem('RecipeIMG');
   useEffect(() => {
     const GetInstruction = async () => {
       const ID = localStorage.getItem('RecipeID');
@@ -21,7 +22,7 @@ const Instructions = () => {
       data[0].steps.forEach(steps => {
         const row = document.createElement('div');
         row.className = 'row';
-        row.setAttribute("id","step");
+        row.setAttribute('id', 'step');
         const col = document.createElement('div');
         col.className = 'col-lg';
         const col0 = document.createElement('div');
@@ -29,7 +30,7 @@ const Instructions = () => {
 
         const equip = document.createElement('p');
         equip.textContent = 'Equipments :';
-        equip.setAttribute("class","heading");
+        equip.setAttribute('class', 'heading');
         const equipPara = document.createElement('p');
         steps.equipment.forEach(item => {
           const p = document.createElement('p');
@@ -39,7 +40,7 @@ const Instructions = () => {
 
         const ing = document.createElement('p');
         ing.textContent = 'Ingredients :';
-        ing.setAttribute("class","heading");
+        ing.setAttribute('class', 'heading');
         const ingPara = document.createElement('p');
         steps.ingredients.forEach(item => {
           const p = document.createElement('p');
@@ -52,7 +53,7 @@ const Instructions = () => {
 
         const description = document.createElement('p');
         description.textContent = 'Description :';
-        description.setAttribute("class","heading");
+        description.setAttribute('class', 'heading');
         const step = document.createElement('p');
         step.textContent = steps.step;
 
@@ -74,6 +75,7 @@ const Instructions = () => {
   return (
     <div className="InstContainer">
       <h2 className="InstTitle">{NAME}</h2>
+      <img id="InstImg" src={IMG} alt="RecipeImage"></img>
       <div id="InstContent" className="InstContent"></div>
     </div>
   );
