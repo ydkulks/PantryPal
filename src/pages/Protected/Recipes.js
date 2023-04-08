@@ -5,10 +5,20 @@ const Recipes = () => {
   const [query, setQuery] = useState('');
   const [diet, setDiet] = useState(null);
   const [cuisine, setCuisine] = useState(null);
+  const [ingredients, setIngredients] = useState(null);
   //const [offset, setOffset] = useState(0);
 
+  // Advanced search
+  const AdvSearch = () => {
+    const advContent = document.getElementById('RecipesAdvDropContent');
+    if (advContent.style.display === 'block') {
+      advContent.style.display = 'none';
+    } else {
+      advContent.style.display = 'block';
+    }
+  };
   // Recipes Instructions
-  const GetInstructions = async (ID, NAME,IMG) => {
+  const GetInstructions = async (ID, NAME, IMG) => {
     localStorage.setItem('RecipeID', ID);
     localStorage.setItem('RecipeNAME', NAME);
     localStorage.setItem('RecipeIMG', IMG);
@@ -20,6 +30,7 @@ const Recipes = () => {
       query: `${query}`,
       diet: `${diet}`,
       cuisine: `${cuisine}`,
+      ingredients: `${ingredients}`,
       //offset: `${offset}`,
     };
     const url = 'http://localhost:5000/api/recipes';
@@ -85,33 +96,42 @@ const Recipes = () => {
       resultsContainer.appendChild(divR);
     });
   };
+
   return (
     <div className="RecipesContainer">
       <h2 className="RecipesTitle">Recipes</h2>
-      <p className="RecipesIntro">
-        Welcome to our Recipes page, where you can search for delicious and
-        easy-to-make recipes using the ingredients you have on hand.
-      </p>
-      <p className="RecipesIntro">
-        Simply enter the ingredients you want to use in the search bar below,
-        and our app will provide you with a list of recipes that match your
-        criteria. From classic comfort foods to healthy and exotic dishes, our
-        Recipes page offers a diverse selection of recipes that will satisfy
-        your cravings and impress your guests.
-      </p>
-      <p className="RecipesIntro">
-        You can also filter your search results by cuisine, dietary
-        restrictions, cooking time, and more, to find the perfect recipe for any
-        occasion.
-      </p>
-      <p className="RecipesIntro">
-        Whether you're a beginner or an experienced chef, our Recipes page is a
-        great resource for discovering new and exciting dishes. So start
-        exploring, and get ready to whip up some culinary magic in your kitchen!
-      </p>
-      <div className="form-row">
-        <div className="col">
-          <div id="RecipesSearchContainer">
+      <div id="RecipesIntroDiv">
+        <div className="row">
+          <div className="col-lg">
+            <i className="bi bi-journal"></i>
+            <p className="RecipesIntro">
+              Welcome to our Recipes page! Search for delicious and easy-to-make
+              recipes using the ingredients you have on hand.
+            </p>
+          </div>
+          <div className="col-lg">
+            <i className="bi bi-filter-circle"></i>
+            <p className="RecipesIntro">
+              Enter your ingredients in the search bar below and filter your
+              results by cuisine, dietary restrictions, and cooking time to find
+              the perfect recipe for any occasion.
+            </p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col">
+            <i className="bi bi-magic"></i>
+            <p className="RecipesIntro">
+              Our app queries an API to provide a diverse selection of recipes
+              to satisfy your cravings and impress your guests. Start exploring
+              and get ready to whip up some culinary magic in your kitchen!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="RecipesSearchContainer">
+        <div className="form-row">
+          <div className="col">
             <input
               id="RecipesSearchBar"
               type="text"
@@ -122,43 +142,58 @@ const Recipes = () => {
             <button id="RecipesSearchBtn" onClick={getRecipes}>
               <i className="bi bi-search"></i>
             </button>
-            <select
-              onChange={e => setDiet(e.target.value)}
-              defaultValue={'DEFAULT'}
-            >
-              <option value="DEFAULT" disabled>
-                Diet
-              </option>
-              <option value="GlutenFree">Gluten Free</option>
-              <option value="Ketogenic">Ketogenic</option>
-              <option value="Vegetarian">Vegetarian</option>
-              <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
-              <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
-              <option value="Vegan">Vegan</option>
-              <option value="Pescetarian">Pescetarian</option>
-              <option value="Paleo">Paleo</option>
-              <option value="Primal">Primal</option>
-              <option value="LowFODMAP">LowFODMAP</option>
-              <option value="Whole30">Whole30</option>
-            </select>
-            <select
-              onChange={e => setCuisine(e.target.value)}
-              defaultValue={'DEFAULT'}
-            >
-              <option value="DEFAULT" disabled>
-                Cuisine
-              </option>
-              <option value="Ameriacn">Ameriacn</option>
-              <option value="British">British</option>
-              <option value="Chinese">Chinese</option>
-              <option value="European">European</option>
-              <option value="French">French</option>
-              <option value="Indian">Indian</option>
-              <option value="Italian">Italian</option>
-              <option value="Japanese">Japanese</option>
-              <option value="Mexican">Mexican</option>
-              <option value="MiddleEastern">MiddleEastern</option>
-            </select>
+            <div id="RecipesAdvDrop">
+              <button id="RecipesAdvSearch" onClick={AdvSearch}>
+                <i className="bi bi-sliders2"></i>
+              </button>
+              <div id="RecipesAdvDropContent">
+                <select
+                  onChange={e => setDiet(e.target.value)}
+                  defaultValue={'DEFAULT'}
+                >
+                  <option value="DEFAULT" disabled>
+                    Diet
+                  </option>
+                  <option value="GlutenFree">Gluten Free</option>
+                  <option value="Ketogenic">Ketogenic</option>
+                  <option value="Vegetarian">Vegetarian</option>
+                  <option value="Lacto-Vegetarian">Lacto-Vegetarian</option>
+                  <option value="Ovo-Vegetarian">Ovo-Vegetarian</option>
+                  <option value="Vegan">Vegan</option>
+                  <option value="Pescetarian">Pescetarian</option>
+                  <option value="Paleo">Paleo</option>
+                  <option value="Primal">Primal</option>
+                  <option value="LowFODMAP">LowFODMAP</option>
+                  <option value="Whole30">Whole30</option>
+                </select>
+                <select
+                  onChange={e => setCuisine(e.target.value)}
+                  defaultValue={'DEFAULT'}
+                >
+                  <option value="DEFAULT" disabled>
+                    Cuisine
+                  </option>
+                  <option value="Ameriacn">Ameriacn</option>
+                  <option value="British">British</option>
+                  <option value="Chinese">Chinese</option>
+                  <option value="European">European</option>
+                  <option value="French">French</option>
+                  <option value="Indian">Indian</option>
+                  <option value="Italian">Italian</option>
+                  <option value="Japanese">Japanese</option>
+                  <option value="Mexican">Mexican</option>
+                  <option value="MiddleEastern">MiddleEastern</option>
+                </select>
+                <br />
+                <label for="ingInput">Ingredients</label>
+                <br />
+                <textarea
+                  id="ingInput"
+                  onChange={e => setIngredients(e.target.value)}
+                  placeholder="Ex: tomato,potato"
+                ></textarea>
+              </div>
+            </div>
           </div>
         </div>
       </div>

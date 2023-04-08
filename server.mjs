@@ -137,7 +137,8 @@ app.post('/api/recipes', async (req, res) => {
   const query = req.body.query;
   const diet = req.body.diet;
   const cuisine = req.body.cuisine;
-  const params2 = `&diet=${diet}&cuisine=${cuisine}&number=2`;
+  const ing = req.body.ingredients;
+  const params2 = `&diet=${diet}&cuisine=${cuisine}&includeIngredients=${ing}&number=2`;
   const params = `?apiKey=${apiKey}&query=${query}${params2}`;
   const url = `https://api.spoonacular.com/recipes/complexSearch${params}`;
   const request = await fetch(url);
