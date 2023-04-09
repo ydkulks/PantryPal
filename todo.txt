@@ -3,6 +3,7 @@
 ###########
 Front-end
 =========
+  Suggested recipes
   Forgot password
   Password reset
   Delete account
@@ -14,6 +15,7 @@ Front-end
 
 Back-end
 ========
+  Suggested recipes
   Forgot password
   Password reset
   Delete account

@@ -1,4 +1,12 @@
 import AuthUser from '../AuthUser';
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import img1 from '../../assets/pizza.jpg';
+import img2 from '../../assets/biryani.jpg';
+import img3 from '../../assets/burger.jpg';
+import img4 from '../../assets/cake.jpg';
+import img5 from '../../assets/noodles.jpg';
+import img6 from '../../assets/ice_cream.jpg';
 import React, {useState} from 'react';
 
 const Recipes = () => {
@@ -103,13 +111,6 @@ const Recipes = () => {
       <div id="RecipesIntroDiv">
         <div className="row">
           <div className="col-lg">
-            <i className="bi bi-journal"></i>
-            <p className="RecipesIntro">
-              Welcome to our Recipes page! Search for delicious and easy-to-make
-              recipes using the ingredients you have on hand.
-            </p>
-          </div>
-          <div className="col-lg">
             <i className="bi bi-filter-circle"></i>
             <p className="RecipesIntro">
               Enter your ingredients in the search bar below and filter your
@@ -118,16 +119,77 @@ const Recipes = () => {
             </p>
           </div>
         </div>
-        <div className="row">
-          <div className="col">
-            <i className="bi bi-magic"></i>
-            <p className="RecipesIntro">
-              Our app queries an API to provide a diverse selection of recipes
-              to satisfy your cravings and impress your guests. Start exploring
-              and get ready to whip up some culinary magic in your kitchen!
-            </p>
-          </div>
-        </div>
+      </div>
+      <div id="CarouselContainer">
+        <h3 className="CarouselHead">Inspiration for your search</h3>
+        <Carousel id="Carousel" variant="dark">
+          <Carousel.Item className="CarouselItem">
+            <img
+              style={{height: '300px', display: 'block'}}
+              className="d-block w-100"
+              alt="Pizza"
+              src={img1}
+            />
+            <Carousel.Caption>
+              <h3 className="CarouselName">Pizza</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item className="CarouselItem">
+            <img
+              style={{height: '300px', display: 'block'}}
+              className="d-block w-100"
+              alt="Biryani"
+              src={img2}
+            />
+            <Carousel.Caption>
+              <h3 className="CarouselName">Biryani</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item className="CarouselItem">
+            <img
+              style={{height: '300px', display: 'block'}}
+              className="d-block w-100"
+              alt="Burger"
+              src={img3}
+            />
+            <Carousel.Caption>
+              <h3 className="CarouselName">Burger</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item className="CarouselItem">
+            <img
+              style={{height: '300px', display: 'block'}}
+              className="d-block w-100"
+              alt="Cake"
+              src={img4}
+            />
+            <Carousel.Caption>
+              <h3 className="CarouselName">Cake</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item className="CarouselItem">
+            <img
+              style={{height: '300px', display: 'block'}}
+              className="d-block w-100"
+              alt="Noodles"
+              src={img5}
+            />
+            <Carousel.Caption>
+              <h3 className="CarouselName">Noodles</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item className="CarouselItem">
+            <img
+              style={{height: '300px', display: 'block'}}
+              className="d-block w-100"
+              alt="Ice cream"
+              src={img6}
+            />
+            <Carousel.Caption>
+              <h3 className="CarouselName">Ice cream</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
       </div>
       <div id="RecipesSearchContainer">
         <div className="form-row">
@@ -185,7 +247,7 @@ const Recipes = () => {
                   <option value="MiddleEastern">MiddleEastern</option>
                 </select>
                 <br />
-                <label for="ingInput">Ingredients</label>
+                <label htmlFor="ingInput">Ingredients</label>
                 <br />
                 <textarea
                   id="ingInput"

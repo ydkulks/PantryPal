@@ -24,6 +24,44 @@
   margin-left: 5vw;
 }
 
+#CarouselContainer{
+  max-width: 500px;
+  max-height: 500px;
+  /*display: block;*/
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.CarouselHead{
+  font-family: WaterBrush;
+  font-size: 3rem;
+  color: var(--bg);
+}
+
+.CarouselName{
+  font-family: WaterBrush;
+}
+
+.CarouselItem img{
+  max-width:80vw;
+  max-height:500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+  border: solid var(--bg);
+  border-radius: 25px;
+}
+
+.CarouselItem h3,
+.CarouselItem p{
+  color: var(--white);
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 10px;
+  padding: 5px;
+}
+
 #RecipesAdvSearch{
   color: var(--white);
   font-size: 20px;
@@ -58,7 +96,7 @@
 #ingInput{
   border: solid var(--bg);
   border-radius: 10px;
-  width: 400px;
+  width: 420px;
 }
 
 #RecipesSearchContainer{
