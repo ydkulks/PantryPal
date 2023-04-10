@@ -109,14 +109,15 @@ const Recipes = () => {
     <div className="RecipesContainer">
       <h2 className="RecipesTitle">Recipes</h2>
       <div id="RecipesIntroDiv">
-        <div className="row">
-          <div className="col-lg">
-            <i className="bi bi-filter-circle"></i>
-            <p className="RecipesIntro">
-              Enter your ingredients in the search bar below and filter your
-              results by cuisine, dietary restrictions, and cooking time to find
-              the perfect recipe for any occasion.
-            </p>
+        <div className="RecipesIntroDiv">
+          <div className="row">
+            <div className="col-lg">
+              <p className="RecipesIntro">
+                Enter your ingredients in the search bar below and filter your
+                results by cuisine, dietary restrictions, and cooking time to
+                find the perfect recipe for any occasion.
+              </p>
+            </div>
           </div>
         </div>
       </div>

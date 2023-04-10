@@ -3,7 +3,6 @@
 ###########
 Front-end
 =========
-  Suggested recipes
   Forgot password
   Password reset
   Delete account
@@ -15,7 +14,6 @@ Front-end
 
 Back-end
 ========
-  Suggested recipes
   Forgot password
   Password reset
   Delete account
@@ -49,6 +47,7 @@ Front-end
     Categories (cuisine,diet,type)
     Recipe Details : Ingredients, Instructions
       Get Analyzed Recipe Instructions
+  Search suggestion
 
 Back-end
 ========
@@ -67,6 +66,7 @@ Back-end
     Categories (cuisine,diet,type)
     Recipe Details : Ingredients, Instructions
       Get Analyzed Recipe Instructions
+  Search suggestion
 
 ###########
 ## Notes ##
