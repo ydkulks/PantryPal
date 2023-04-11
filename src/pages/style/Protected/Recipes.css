@@ -58,6 +58,26 @@
   color: var(--white);
 }
 
+@keyframes RecipesBtn{
+  0% {bottom:0px;}
+  50% {bottom: 5px;}
+  100% {bottom:0px;}
+}
+
+#RecipesDownBtn i{
+  position: absolute;
+  margin-left: 48%;
+  margin-right: 50%;
+  margin-bottom: 2cqmax;
+  animation-name: RecipesBtn;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  z-index: 2;
+}
+#RecipesDownBtn i:hover{
+  color: var(--white);
+}
+
 #CarouselContainer{
   max-width: 500px;
   max-height: 500px;

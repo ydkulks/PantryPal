@@ -117,6 +117,9 @@ const Recipes = () => {
                 results by cuisine, dietary restrictions, and cooking time to
                 find the perfect recipe for any occasion.
               </p>
+              <a id="RecipesDownBtn" href="#RecipesSearchBar">
+                <i className="bi bi-caret-down-fill"></i>
+              </a>
             </div>
           </div>
         </div>
