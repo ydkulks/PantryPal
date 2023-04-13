@@ -66,7 +66,7 @@
 
 #RecipesDownBtn i{
   position: absolute;
-  margin-left: 48%;
+  margin-left: 49%;
   margin-right: 50%;
   margin-bottom: 2cqmax;
   animation-name: RecipesBtn;
@@ -79,29 +79,30 @@
 }
 
 #CarouselContainer{
-  max-width: 500px;
-  max-height: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 2rem;
+  margin: 2rem;
 }
 
 .CarouselHead{
   font-family: WaterBrush;
   font-size: 3rem;
   color: var(--bg);
+  text-align: center;
 }
 
 .CarouselName{
   font-family: WaterBrush;
 }
 
-.CarouselItem img{
-  max-width:80vw;
-  max-height:500px;
+#Carousel{
+  max-width:500px;
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.CarouselItem img{
+  /*max-width:400px;*/
+  max-height:500px;
   margin-bottom: 2rem;
   border: solid var(--bg);
   border-radius: 25px;
