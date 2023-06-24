@@ -58,3 +58,20 @@
   display: block;
   justify-content:center;
 }
+
+#BackBtn{
+  margin-top: 20px;
+  margin-left: 20px;
+  border: solid var(--bg);
+  background-color: var(--bg);
+  color: var(--white);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+#BackBtn:hover{
+  background-color: none;
+  color: var(--bg);
+}

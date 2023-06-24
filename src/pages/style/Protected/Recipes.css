@@ -201,6 +201,7 @@
   border-radius: 25px;
   margin-top: 2rem;
   padding: 3rem;
+  min-height: 25rem;
 }
 
 #RecipesResult div h3{
