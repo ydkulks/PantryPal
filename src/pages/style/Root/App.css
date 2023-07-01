@@ -1,18 +1,18 @@
-@import './Nav.css';
-@import './Footer.css';
-@import './Terms.css';
-@import '../Signup/Signup.css';
-@import '../Login/Login.css';
-@import '../Protected/Recipes.css';
-@import '../Protected/Instructions.css';
-@import '../Protected/ShoppingList.css';
-@import './var.css';
+@import "./Nav.css";
+@import "./Footer.css";
+@import "./Terms.css";
+@import "../Signup/Signup.css";
+@import "../Login/Login.css";
+@import "../Protected/Recipes.css";
+@import "../Protected/Instructions.css";
+@import "../Protected/ShoppingList.css";
+@import "./var.css";
 
-*{
+* {
   z-index: auto;
 }
 
-#Home{
+#Home {
   z-index: 999;
 }
 h2 {
@@ -24,31 +24,30 @@ h2 {
 }
 
 .HeroContainer {
-  padding-top:10%;
-  padding-right:5%;
-  padding-left:5%;
+  padding-top: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
   background-color: var(--bg);
-  min-height:100vh;
+  min-height: 100vh;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 5px 10px 5px rgba(0,0,0,0.1);
+  box-shadow: 5px 10px 5px rgba(0, 0, 0, 0.1);
 }
 
 .AboutContainer {
-  padding-top:10%;
-  padding-right:5%;
-  padding-left:5%;
-  min-height:100vh;
+  padding-top: 10%;
+  padding-right: 5%;
+  padding-left: 5%;
+  min-height: 100vh;
 }
 
 /* Dark mode setting */
-.DarkMode{
+.DarkMode {
   background-color: var(--black);
   color: var(--grey);
 }
 
-#DModeIcon{
+#DModeIcon {
   color: var(--white);
   margin: 5px;
 }
-

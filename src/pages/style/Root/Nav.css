@@ -1,72 +1,100 @@
 @import './var.css';
 
-
-.NavBar {
-  display: flex;
-  gap: 2rem;
-  color: var(--white);
-  /*justify-content: center;*/
-  background-color: var(--bg);
-  border: solid var(--bg);
-  border-bottom-left-radius:25px;
-  border-bottom-right-radius:25px;
-  /*padding-bottom: 10px;*/
-  /*box-shadow: 5px 10px 5px rgba(0,0,0,0.1);*/
-
-  /* Sticky nav */
-  position: fixed;
+#NavBar {
+  margin: 0;
+  background-color: transparent;
   top: 0;
+  display: flex;
+  position: fixed;
   width: 100%;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding-left: 4rem;
+  padding-right: 4rem;
   z-index: 100;
 }
 
-.NavBar:active{
-  box-shadow: 5px 10px 5px rgba(0,0,0,0.1);
-}
-
-.NavBrandA{
-  text-decoration: none;
-}
-
-.NavBrand{
-  color: var(--white);
-  font-family: WaterBrush;
-  font-size: 2.5vh;
-  margin-right: 5cqmax;
-  margin-left: -5vw;
-}
-
-.Toggle{
-  font-size: 3vh;
-  color: var(--bg);
-  background-color: var(--bg);
-  --bs-navbar-toggler-border-color: none;
-}
-
-.NavList {
+.Menu {
+  padding-top: 10px;
   list-style: none;
   display: flex;
-  gap: 1rem;
-  padding-right: 5cqmin;
+  gap: 5rem;
 }
 
-.NavBtn{
-  display: flex;
-  justify-content:center;
-  width: 100%;
+.Menu li a {
   color: var(--white);
-  font-size: 2vh;
   text-decoration: none;
-  letter-spacing: 3px;
-  padding: 10px;
-  border-radius: 10px;
 }
 
-.NavBtn:hover{
-  background-color: rgba(255,255,255,0.3);
+.Menu li a:hover {
+  text-decoration-line:underline;
+}
+
+#NavBar a h6 {
+  font-family: WaterBrush;
+  padding-top: 10px;
   color: var(--white);
 }
 
-#DModeIcon{
+.Logo{
+  text-decoration: none;
+}
+
+#NavBar button {
+  border: none;
+  outline: none;
+  background-color: transparent;
   color: var(--white);
+  font-size: larger;
+  /*display: none;*/
+}
+
+@media screen and (max-width: 768px) {
+  .Menu li a {
+    display: none;
+  }
+
+  #NavBar button {
+    display: block;
+  }
+}
+
+#menuDropdown {
+  position: absolute;
+  top: 30px;
+  right: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--dark);
+  list-style: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* toggle between none and block */
+.menuDropdown {
+  display: none;
+}
+.menuDropdown.show {
+  display: block;
+}
+
+#menuDropdown ul li a {
+  padding-top: 10px;
+  list-style: none;
+  display: grid;
+  justify-content: center;
+  color: var(--white);
+  text-decoration: none;
+}
+
+#menuDropdown ul li a:hover {
+  text-decoration: underline;
+}
+
+#menuDropdown ul li {
+  text-decoration: none;
+  list-style: none;
 }

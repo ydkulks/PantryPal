@@ -1,15 +1,15 @@
-import {useRef} from 'react';
+import React, {useRef} from 'react';
 
 function Footer() {
-  const ref = useRef();
-  //let btn = document.getElementById('TopBtn');
+  const ref = useRef(null);
+
   window.onscroll = function () {
     scrollFunction();
   };
   function scrollFunction() {
     if (
-      document.body.scrollTop > 20 ||
-      document.documentElement.scrollTop > 20
+      document.body.scrollTop > 500 ||
+      document.documentElement.scrollTop > 500
     ) {
       ref.current.style.display = 'block';
     } else {
@@ -23,7 +23,7 @@ function Footer() {
   return (
     <footer>
       <button ref={ref} onClick={Top} id="TopBtn">
-        <i className="bi bi-arrow-up-short"/>
+        <i className="bi bi-arrow-up-short" />
       </button>
       <div className="FooterSection">
         <h4 className="FooterTitle">PantryPal</h4>

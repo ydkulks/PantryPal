@@ -1,10 +1,10 @@
 // Bootstrap
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 // Routes
-import {BrowserRouter as BR, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as BR, Routes, Route } from "react-router-dom";
 // CSS
-import './style/Root/App.css';
+import "./style/Root/App.css";
 //import './style/Root/Nav.css';
 //import './style/Root/Footer.css';
 //import './style/Root/Terms.css';
@@ -14,16 +14,16 @@ import './style/Root/App.css';
 //import './style/Protected/Instructions.css';
 //import './style/Protected/ShoppingList.css';
 // Pages
-import NotFound from './NotFound';
+import NotFound from "./NotFound";
 import NavBar from './Nav';
-import Home from './Home/Home';
-import FooterSection from './Footer';
-import Terms from './Terms';
-import Signup from './Signup/Signup';
-import Login from './Login/Login';
-import Recipes from './Protected/Recipes';
-import Instructions from './Protected/Instructions';
-import SList from './Protected/ShoppingList';
+import Home from "./Home/Home";
+import FooterSection from "./Footer";
+import Terms from "./Terms";
+import Signup from "./Signup/Signup";
+import Login from "./Login/Login";
+import Recipes from "./Protected/Recipes";
+import Instructions from "./Protected/Instructions";
+import SList from "./Protected/ShoppingList";
 
 function App() {
   return (
