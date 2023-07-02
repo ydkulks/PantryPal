@@ -1,7 +1,7 @@
-import React, {useRef} from 'react';
+import React from 'react';
 
 function Footer() {
-  const ref = useRef(null);
+  /*const ref = useRef(null);
 
   window.onscroll = function () {
     scrollFunction();
@@ -15,14 +15,14 @@ function Footer() {
     } else {
       ref.current.style.display = 'none';
     }
-  }
+  }*/
   const Top = () => {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   };
   return (
     <footer>
-      <button ref={ref} onClick={Top} id="TopBtn">
+      <button onClick={Top} id="TopBtn">
         <i className="bi bi-arrow-up-short" />
       </button>
       <div className="FooterSection">

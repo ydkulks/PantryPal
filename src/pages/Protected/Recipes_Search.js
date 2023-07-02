@@ -163,6 +163,7 @@ const RecipesSearch = () => {
           </div>
         </div>
       </div>
+    {/*
       <div>
         <div id="RecipesResult">
           <div className="row">
@@ -171,7 +172,7 @@ const RecipesSearch = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </div>
   );
 };

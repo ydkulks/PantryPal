@@ -1,7 +1,7 @@
 @import './var.css';
 
 #TopBtn{
-  display: none;
+  display: block;
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -22,7 +22,7 @@
 }
 
 .FooterSection{
-  background-color: var(--bg);
+  background-color: var(--dark);
   color: var(--white);
   text-align:center;
   border-top-left-radius: 20px;

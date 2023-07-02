@@ -1,36 +1,36 @@
 @import '../Root/var.css';
 .RecipesContainer{
-  padding:2cqmax;
+  /*padding:2cqmax;*/
   min-height: 100vh;
 }
-.RecipesTitle{
-  margin-top: 7vh;
+#RecipesTitle{
+  /*margin-top: 7vh;*/
   font-family: WaterBrush;
   color: var(--bg);
-  font-size:10;
+  font-size:48px;
 }
 
-#RecipesIntroDiv i{
-  display: block;
-  margin-left: 50%;
-  margin-right: auto;
-  font-size: 3rem;
-  color: var(--bg);
-}
+/*#RecipesIntroDiv i{*/
+  /*display: block;*/
+  /*margin-left: 50%;*/
+  /*margin-right: auto;*/
+  /*font-size: 1rem;*/
+  /*color: var(--bg);*/
+/*}*/
 
 .RecipesIntroDiv{
-  height: 500px;
+  height: 400px;
   position: relative;
   z-index: 1;
   border-radius: 25px;
-  margin-top: 60px;
+  /*margin-top: 60px;*/
 }
 
 #RecipesIntroDiv{
-  margin:5cqmin;
-  margin-bottom: 10cqmax;
+  /*margin:5cqmin;*/
+  /*margin-bottom: 10cqmax;*/
   background-image: url('../../../assets/salad.jpg');
-  border-radius: 25px;
+  /*border-radius: 25px;*/
   background-attachment: fixed;
   background-size: cover;
   background-position: left;
@@ -42,11 +42,11 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  border-radius: 25px;
+  /*border-radius: 25px;*/
 }
 
 .RecipesIntro{
-  font-size: 2rem;
+  font-size: 20px;
   padding: 5rem;
   position: absolute;
   top: 50%;
@@ -56,6 +56,10 @@
   width: 100%;
   z-index: 1;
   color: var(--white);
+}
+
+#RecipesIntro p{
+  margin-bottom: 20px;
 }
 
 @keyframes RecipesBtn{
@@ -118,11 +122,12 @@
 
 #RecipesAdvSearch{
   color: var(--white);
-  font-size: 20px;
+  font-size: 16px;
   background-color:var(--bg);
   border: solid var(--bg);
   border-radius: 10px;
   padding: 8px 16px;
+  display: block;
 }
 #RecipesAdvSearch:hover{
   background-color:var(--white);
@@ -134,12 +139,12 @@
 }
 
 #RecipesAdvDropContent{
-  font-size: 1.5rem;
+  font-size: 16px;
   text-align: left;
   color: var(--white);
   background-color: rgba(0,0,0,0.6);
   border-radius: 10px;
-  min-width: 9rem;
+  min-width: 16px;
   padding: 30px;
   margin: 5px;
   display: none;
@@ -154,9 +159,11 @@
 }
 
 #RecipesSearchContainer{
-  font-size: 1rem;
-  margin-left: 7cqmax;
-  margin-right: 7cqmax;
+  font-size: 16px;
+  display: grid;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 #RecipesSearchContainer select{
@@ -174,9 +181,9 @@
   outline: none;
   border-radius: 10px 0px 0px 10px;
   padding: 10px;
-  width: 20cqmax;
-  margin-left: 2cqmax;
-  margin-right: 0;
+  min-width: 20rem;
+  margin-left: 10px;
+  margin-right: -1px;
 }
 
 #RecipesSearchBtn{
@@ -188,7 +195,7 @@
   border-radius: 0px 10px 10px 0px;
   width: 60px;
   margin-left: 0;
-  margin-right: auto;
+  /*margin-right: auto;*/
 }
 
 #RecipesSearchBtn:hover,
@@ -200,35 +207,57 @@
 #RecipesResult{
   border-radius: 25px;
   margin-top: 2rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
   padding: 3rem;
   min-height: 25rem;
 }
 
-#RecipesResult div h3{
+.SearchResultContainer h3{
   text-align: center;
   font-family: WaterBrush;
-  font-size: 4rem;
-  padding-top: 50px;
+  font-size: 48px;
+  padding-top: 150px;
+  padding-left: 30px;
+  /*color: var(--white);*/
+}
+
+#Circle{
+  z-index:-1;
+  /*background-color: var(--bg);*/
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  position: absolute;
+  top: 340px;
+  left: -80px;
+}
+
+#RecipesResult div h3 {
+  font-family: unset;
+  font-size: 30px;
+  text-align: center;
 }
 
 #RecipesResult div a{
-  font-size: 1.5rem;
+  font-size: 16px;
   text-decoration: none;
+  width: 150px;
   border: solid var(--bg);
   border-radius: 10px;
   color: var(--white);
-  padding: 1.2rem 2rem;
+  padding: 10px 15px;
   display: block;
-  margin-left: 20%;
-  margin-right: 20%;;
+  margin-left: 23vw;
+  /*margin-right: 39%;;*/
   text-align: center;
   background-color: var(--bg);
   cursor: pointer;
 }
 
 #RecipesResult div a:hover{
-  background-color: var(--white);
-  color: var(--bg);
+  background-color: var(--dark);
+  color: var(--white);
 }
 
 #RecipesResult div p{

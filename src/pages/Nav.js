@@ -100,6 +100,10 @@ const NavBar = () => {
             </a>
           </li>
         </ul>
+        <div id="menuX">
+          <button onClick={menuDropdown}>X</button>
+        </div>
+        <div id="unfocusDiv"></div>
       </div>
     </div>
   );
