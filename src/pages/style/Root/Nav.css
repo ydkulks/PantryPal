@@ -13,6 +13,8 @@
   gap: 2rem;
   padding-left: 4rem;
   padding-right: 4rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
   z-index: 100;
 }
 
@@ -70,8 +72,18 @@
   height: 320px;
   background-color: var(--dark);
   list-style: none;
-  /*border-bottom-left-radius: 20px;*/
-  /*border-bottom-right-radius: 20px;*/
+}
+
+/* toggle animation */
+@keyframes navAnimeShow{
+  0% {height: 200px;}
+  20% { height: 350px;}
+  100% { height: 320px;}
+}
+@keyframes unfocusAnime{
+  0% {margin-top: -180px}
+  20% {margin-top: 2px}
+  100% {margin-top:-27px}
 }
 
 /* toggle between none and block */
@@ -80,6 +92,12 @@
 }
 .menuDropdown.show {
   display: block;
+  animation-name: navAnimeShow;
+  animation-duration: 1s;
+}
+
+#menuDropdown ul{
+  padding:0;
 }
 
 #menuDropdown ul li a {
@@ -101,11 +119,9 @@
 }
 
 #menuX{
-  width:50px;
-  height: 50px;
-  position: absolute;
-  top: 300px;
-  left: 49%;
+  display: flex;
+  margin-inline:auto;
+  justify-content: center;
 }
 
 #menuX button{
@@ -122,6 +138,9 @@
 #unfocusDiv{
   background-color: rgba(0,0,0,0.5);
   width: 100%;
-  height:100vh;
-  margin-top: 38px;
+  height:108vh;
+  margin-top: -27px;
+  animation-name: unfocusAnime;
+  animation-duration: 1s;
 }
+

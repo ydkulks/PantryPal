@@ -10,27 +10,15 @@
   font-size:48px;
 }
 
-/*#RecipesIntroDiv i{*/
-  /*display: block;*/
-  /*margin-left: 50%;*/
-  /*margin-right: auto;*/
-  /*font-size: 1rem;*/
-  /*color: var(--bg);*/
-/*}*/
-
 .RecipesIntroDiv{
   height: 400px;
   position: relative;
   z-index: 1;
   border-radius: 25px;
-  /*margin-top: 60px;*/
 }
 
 #RecipesIntroDiv{
-  /*margin:5cqmin;*/
-  /*margin-bottom: 10cqmax;*/
   background-image: url('../../../assets/salad.jpg');
-  /*border-radius: 25px;*/
   background-attachment: fixed;
   background-size: cover;
   background-position: left;
@@ -42,7 +30,6 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  /*border-radius: 25px;*/
 }
 
 .RecipesIntro{
@@ -60,26 +47,6 @@
 
 #RecipesIntro p{
   margin-bottom: 20px;
-}
-
-@keyframes RecipesBtn{
-  0% {bottom:0px;}
-  50% {bottom: 5px;}
-  100% {bottom:0px;}
-}
-
-#RecipesDownBtn i{
-  position: absolute;
-  margin-left: 49%;
-  margin-right: 50%;
-  margin-bottom: 2cqmax;
-  animation-name: RecipesBtn;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
-  z-index: 2;
-}
-#RecipesDownBtn i:hover{
-  color: var(--white);
 }
 
 #CarouselContainer{
@@ -207,18 +174,19 @@
 #RecipesResult{
   border-radius: 25px;
   margin-top: 2rem;
-  margin-left: 3rem;
-  margin-right: 3rem;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 9rem;
   padding: 3rem;
   min-height: 25rem;
 }
 
-.SearchResultContainer h3{
+#RecipesResult h3{
   text-align: center;
   font-family: WaterBrush;
   font-size: 48px;
   padding-top: 150px;
-  padding-left: 30px;
+  /*padding-left: 30px;*/
   /*color: var(--white);*/
 }
 
@@ -232,30 +200,86 @@
   top: 340px;
   left: -80px;
 }
-
-#RecipesResult div h3 {
-  font-family: unset;
-  font-size: 30px;
-  text-align: center;
+.RecBgImg{
+  margin-top: 5rem;
+  background-color: var(--dark);
+  background-image: url('../../../assets/Mexican-Cuisine.jpg');
+  background-size: 400px;
+  background-repeat:no-repeat;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  border-radius: 10px;
+}
+#recom1{
+  background-image: url('https://spoonacular.com/recipeImages/1096057-312x231.jpg');
+}
+#recom2{
+  background-image: url('https://spoonacular.com/recipeImages/511728-312x231.jpg');
+}
+#recom3{
+  background-image: url('https://spoonacular.com/recipeImages/648506-312x231.jpg');
+}
+#recom4{
+  background-image: url('https://spoonacular.com/recipeImages/660913-312x231.jpg');
+}
+#recom5{
+  background-image: url('https://spoonacular.com/recipeImages/654018-312x231.jpg');
+}
+#recom6{
+  background-image: url('https://spoonacular.com/recipeImages/637761-312x231.jpg');
+}
+.RecTray{
+  background-color: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom:0px;
+  width: 400px;
+  height: 60px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.RecTray button{
+  background-color: var(--dark);
+  color: var(--grey);
+  border:none;
+  border-bottom-right-radius: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-#RecipesResult div a{
+.RecTray button:hover{
+  background-color: var(--bg);
+}
+
+.RecTray h4{
+  color: var(--grey);
+  padding-left: 10px;
+}
+#RecipesResult div h3 {
+  font-family: unset;
+  font-size: 28px;
+  text-align: center;
+  padding-left: 0px;
+}
+.InstructionsBtnDiv{
+  display: grid;
+  justify-content: center;
+}
+
+.RecipesLink{
   font-size: 16px;
-  text-decoration: none;
   width: 150px;
   border: solid var(--bg);
   border-radius: 10px;
   color: var(--white);
   padding: 10px 15px;
-  display: block;
-  margin-left: 23vw;
-  /*margin-right: 39%;;*/
-  text-align: center;
+  /*margin-left: 23vw;*/
   background-color: var(--bg);
-  cursor: pointer;
 }
 
-#RecipesResult div a:hover{
+.RecipesLink:hover{
   background-color: var(--dark);
   color: var(--white);
 }

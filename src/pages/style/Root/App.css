@@ -51,3 +51,7 @@ h2 {
   color: var(--white);
   margin: 5px;
 }
+
+#DModeIcon:hover{
+  color: var(--bg);
+}

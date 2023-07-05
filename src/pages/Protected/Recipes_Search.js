@@ -42,7 +42,7 @@ const RecipesSearch = () => {
     };
     const res = await fetch(url, options);
     data = await res.json();
-    console.log(data);
+    //console.log(data);
     const resultsContainer = document.getElementById('RecipesResult');
     resultsContainer.innerHTML = ' ';
     if (data.results.length === 0) {
@@ -52,7 +52,7 @@ const RecipesSearch = () => {
         const div1 = document.createElement('div');
         div1.className = 'col-lg';
         const title = document.createElement('h3');
-        title.textContent = 'No resuls found!';
+        title.textContent = 'No results found!';
         div1.appendChild(title);
         div.appendChild(div1);
         resultsContainer.appendChild(div);
@@ -74,7 +74,9 @@ const RecipesSearch = () => {
       const div2 = document.createElement('div');
       div2.className = 'col-lg';
       const para = document.createElement('p');
-      const link = document.createElement('a');
+      const link = document.createElement('button');
+      const div3 = document.createElement('div');
+      div3.className = 'InstructionsBtnDiv';
 
       title.textContent = result.title;
       link.className = 'RecipesLink';
@@ -87,7 +89,8 @@ const RecipesSearch = () => {
 
       div1.appendChild(title);
       div1.appendChild(para);
-      div1.appendChild(link);
+      div3.appendChild(link);
+      div1.appendChild(div3);
       div2.appendChild(img);
 
       divR.appendChild(div1);
@@ -113,7 +116,7 @@ const RecipesSearch = () => {
             </button>
             <div id="RecipesAdvDrop">
               <button id="RecipesAdvSearch" onClick={AdvSearch}>
-                <i className="bi bi-sliders2"></i>
+                <i className="bi bi-funnel"></i>
               </button>
               <div id="RecipesAdvDropContent">
                 <select
@@ -163,7 +166,7 @@ const RecipesSearch = () => {
           </div>
         </div>
       </div>
-    {/*
+      {/*
       <div>
         <div id="RecipesResult">
           <div className="row">
