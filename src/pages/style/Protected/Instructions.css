@@ -1,18 +1,20 @@
 @import '../Root/var.css';
 
 .InstContainer{
-  padding:2cqmax;
+  padding: 0px;
+  margin: 0px;
   min-height: 100vh;
 }
 .InstTitle{
-  margin-top: 7vh;
+  margin-top: 0px;
+  padding-top: 50px;
   font-family: WaterBrush;
-  color: var(--bg);
+  color: var(--white);
   font-size:10;
 }
 
 #InstImg{
-  border: solid var(--bg);
+  border: solid var(--white);
   border-radius: 25px;
   display: block;
   /*margin-left: auto;*/
@@ -22,9 +24,19 @@
   margin-bottom: 2rem;
 }
 
+#InstHero{
+  /*position: absolute;*/
+  background-color: var(--bg);
+  width: 100%;
+  padding-bottom: 50px;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
+
 .InstContent{
-  margin-left: 5cqmax;
-  margin-right: 5cqmax;
+  margin-left: 20%;
+  margin-right: 20%;
+  min-width: 400px;
 }
 
 #step{
@@ -42,7 +54,7 @@
   margin-top: 2cqmax;
   color: var(--bg);
   font-family: WaterBrush;
-  font-size: 5cqmax;
+  font-size: 48px;
 }
 
 .heading{
@@ -62,9 +74,10 @@
 #BackBtn{
   margin-top: 20px;
   margin-left: 20px;
+  margin-bottom: 20px;
   border: solid var(--bg);
-  background-color: var(--bg);
-  color: var(--white);
+  background-color: transparent;
+  color: var(--bg);
   cursor: pointer;
   padding: 10px 20px;
   border-radius: 10px;
@@ -72,6 +85,6 @@
 }
 
 #BackBtn:hover{
-  background-color: none;
-  color: var(--bg);
+  background-color: var(--bg);
+  color: var(--grey);
 }

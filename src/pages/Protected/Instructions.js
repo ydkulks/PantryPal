@@ -5,8 +5,8 @@ const Instructions = () => {
   const NAME = localStorage.getItem('RecipeNAME');
   const IMG = localStorage.getItem('RecipeIMG');
   const Back = () => {
-    window.location.href='/Recipes';
-  }
+    window.location.href = '/Recipes';
+  };
   useEffect(() => {
     const GetInstruction = async () => {
       const ID = localStorage.getItem('RecipeID');
@@ -19,7 +19,7 @@ const Instructions = () => {
         body: JSON.stringify({id: ID}),
       });
       const data = await res.json();
-      console.log(data);
+      //console.log(data);
       const div = document.getElementById('InstContent');
       var count = 1;
       data[0].steps.forEach(steps => {
@@ -77,11 +77,17 @@ const Instructions = () => {
   }, []);
   return (
     <div className="InstContainer">
-      <h2 className="InstTitle">{NAME}</h2>
-      <img id="InstImg" src={IMG} alt="RecipeImage"></img>
+      <div id="InstHero">
+        <h2 className="InstTitle">{NAME}</h2>
+        <img id="InstImg" src={IMG} alt="RecipeImage"></img>
+      </div>
+      <button onClick={Back} id="BackBtn">
+        <i className="bi bi-arrow-left-short" />
+        Back
+      </button>
       <div id="InstContent" className="InstContent"></div>
       <button onClick={Back} id="BackBtn">
-        <i className="bi bi-arrow-left-short"/>
+        <i className="bi bi-arrow-left-short" />
         Back
       </button>
     </div>
