@@ -1,13 +1,42 @@
 @import '../Root/var.css';
 
 .SListContainer{
-  padding:2cqmax;
   min-height: 100vh;
 }
 
 .SListTitle{
-  margin-top: 7vh;
+  margin-top: 0px;
+  padding-top: 100px;
   font-family: WaterBrush;
-  color: var(--bg);
-  font-size:10;
+  color: var(--white);
+  font-size:48px;
+  text-align: center;
+}
+
+.SListHero div{
+  display:grid;
+  justify-content: center;
+  margin-top:3rem;
+  margin-bottom:3rem;
+}
+
+.SListContainer form input{
+  padding: 5px;
+  padding-left: 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border:none;
+  width: 20rem;
+}
+.SListContainer form button{
+  width: 5rem;
+  padding: 5px;
+  border-radius: 0rem 1rem 1rem 0rem;
+  border:none;
+  background-color: var(--dark);
+  color: var(--grey);
+}
+.SListContainer form button:hover{
+  background-color:var(--black);
+  color:var(--white);
 }
