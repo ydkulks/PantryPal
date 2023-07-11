@@ -1,39 +1,38 @@
 import AuthUser from '../AuthUser';
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 
 const ShoppingList = () => {
-  useEffect(() => {
-    const getList = async () => {
-      const token = localStorage.getItem('token');
-      try {
-        const request = await fetch('http://localhost:5000/api/shoppinglist', {
-          headers: {
-            Authorisation: `Bearer ${token}`,
-          },
-        });
-        const response = await request.json();
-        if (response.status === 200) {
-          const items = [];
-          // Extracting items from object and storing in array
-          response.data.forEach(item => {
-            items.push(item.item);
-          });
-          items.sort((a, b) => a.localeCompare(b));
-          setResultData(items);
-          //console.log('All Data: ', response);
-        } else {
-          console.log('Server Error: ', response);
-        }
-      } catch (err) {
-        console.log('Error:', err);
-      }
-    };
-    getList();
-  }, []);
-
   const [item, setItem] = useState(null);
   const [resultData, setResultData] = useState([]);
   const token = localStorage.getItem('token');
+
+  const getList = async () => {
+    const token = localStorage.getItem('token');
+    try {
+      const request = await fetch('http://localhost:5000/api/shoppinglist', {
+        headers: {
+          Authorisation: `Bearer ${token}`,
+        },
+      });
+      const response = await request.json();
+      if (response.status === 200) {
+        // Extracting items from object and storing in array
+        const items = response.data.map(({_id, item, timestamp}) => ({
+          id: _id,
+          item,
+          timestamp,
+        }));
+        items.sort((a, b) => new Date(a.timestamp) - new Date(b.timestamp));
+        setResultData(items);
+        //console.log('All Data: ', response);
+      } else {
+        console.log('Server Error: ', response);
+      }
+    } catch (err) {
+      console.log('Error:', err);
+    }
+  };
+  getList();
 
   const SubmitForm = async event => {
     const formData = {
@@ -42,7 +41,6 @@ const ShoppingList = () => {
     };
     event.preventDefault();
     event.target.reset();
-
     try {
       const request = await fetch('http://localhost:5000/api/shoppinglist', {
         method: 'POST',
@@ -54,14 +52,7 @@ const ShoppingList = () => {
       });
       const response = await request.json();
       if (response.status === 200) {
-        const items = [];
-        // Extracting items from object and storing in array
-        response.data.forEach(item => {
-          items.push(item.item);
-        });
-        // sorting array
-        items.sort((a, b) => a.localeCompare(b));
-        setResultData(items);
+        getList();
       } else {
         console.log('Server Error!');
       }
@@ -69,6 +60,29 @@ const ShoppingList = () => {
       console.log('Error:', err);
     }
   };
+
+  const deleteListItem = async listID => {
+    try {
+      const data = {
+        id: listID,
+      };
+      const request = await fetch('http://localhost:5000/api/listdelete', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorisation: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      });
+      const response = await request.json();
+      console.log(response);
+      if (response.status === 200) getList();
+      console.log(`Server Error: ${response.status}`);
+    } catch (err) {
+      console.log(`Error: ${err}`);
+    }
+  };
+
   return (
     <div className="SListContainer">
       <div id="InstHero" className="SListHero">
@@ -84,10 +98,25 @@ const ShoppingList = () => {
           </form>
         </div>
       </div>
-      <div>
-        {resultData.map((item, index) => (
-          <p key={index}>{item}</p>
-        ))}
+      <div id="itemContainer">
+        <div className="itemContainer">
+          {resultData.map(({id, item, timestamp}, i) => (
+            <div key={i} className="itemDiv">
+              <div>
+                <h4>{item}</h4>
+                <p>{timestamp}</p>
+              </div>
+              <div>
+                <button>
+                  <i className="bi bi-pencil-fill" />
+                </button>
+                <button onClick={() => deleteListItem(id)}>
+                  <i className="bi bi-trash-fill" />
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

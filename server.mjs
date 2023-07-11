@@ -37,12 +37,15 @@ import jwt from "jsonwebtoken"; //Auth
 // Recipes API
 // Instructions API
 // Shopping List
+
+// Contact form
 app.post("/api/contact", (req, res) => {
   //console.log(req.body);
   cf.insert(req.body);
   res.send({ status: 200, contactForm: "Submitted" });
 });
 
+// Sign-up
 app.post("/api/signup", async (req, res) => {
   const hashedPwd = await bcrypt.hash(req.body.password, 10);
   su.find({ name: req.body.name, email: req.body.email }, (err, doc) => {
@@ -62,6 +65,7 @@ app.post("/api/signup", async (req, res) => {
   });
 });
 
+// Login
 const ENV = process.env;
 app.post("/api/login", (req, res) => {
   // Authentication
@@ -87,6 +91,7 @@ app.post("/api/login", (req, res) => {
   });
 });
 
+// Authorization
 const Authorization = (req, res, next) => {
   const authHeader = req.headers["authorisation"];
   const token = authHeader && authHeader.split(" ")[1];
@@ -105,6 +110,7 @@ const Authorization = (req, res, next) => {
   }
 };
 
+// Protected route
 app.get("/api/protected", Authorization, (req, res) => {
   // Checking role of the user
   su.find({ name: req.user }, (err, doc) => {
@@ -119,11 +125,13 @@ app.get("/api/protected", Authorization, (req, res) => {
   });
 });
 
+// Account deletion
 app.get("/api/deleteAccount", Authorization, (req, res) => {
   su.remove({ name: req.user });
   return res.send({ status: 200, message: "account deleted" });
 });
 
+// Dashboard
 app.get("/api/dashboard", Authorization, (req, res) => {
   su.find({ name: req.user }, (err, doc) => {
     if (err) console.log(err);
@@ -140,7 +148,7 @@ app.get("/api/dashboard", Authorization, (req, res) => {
   });
 });
 
-// Calling 'spoonacular' API
+// Recipes API
 const apiKey = process.env.API_KEY;
 app.post("/api/recipes", async (req, res) => {
   const query = req.body.query;
@@ -157,6 +165,7 @@ app.post("/api/recipes", async (req, res) => {
   res.status(200).send(data);
 });
 
+// Instructions API
 app.post("/api/instructions", async (req, res) => {
   const id = req.body.id;
   const params = `${id}/analyzedInstructions?apiKey=${apiKey}`;
@@ -174,13 +183,7 @@ app.post("/api/shoppinglist", Authorization, (req, res) => {
   };
   // Insert new data into the database
   sl.insert(NewData);
-  // Send updated data to client
-  sl.find({ name: req.user }, (err, doc) => {
-    if (err) return console.log(err);
-    if (doc.length === 0) return res.send({ status: 401 });
-
-    res.send({ status: 200, data: doc });
-  });
+  res.send({ status: 200 });
 });
 
 app.get("/api/shoppinglist", Authorization, (req, res) => {
@@ -190,6 +193,14 @@ app.get("/api/shoppinglist", Authorization, (req, res) => {
     if (doc.length === 0) return res.send({ status: 401 });
 
     res.send({ status: 200, data: doc });
+  });
+});
+
+app.post("/api/listdelete", Authorization, (req, res) => {
+  su.remove({ _id: req.body.id }, {}, (err, numRemoved) => {
+    if (err) return res.send({ status: 401 });
+    if (numRemoved === 0) return res.send({ status: 404 });
+    res.send({ status: 200, numRemoved: numRemoved });
   });
 });
 
