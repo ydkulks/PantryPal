@@ -4,6 +4,8 @@ import React, {useState} from 'react';
 const ShoppingList = () => {
   const [item, setItem] = useState(null);
   const [resultData, setResultData] = useState([]);
+  const [newItem, setNewItem] = useState(null);
+  const [showPopover, setShowPopover] = useState(false);
   const token = localStorage.getItem('token');
 
   const getList = async () => {
@@ -75,12 +77,36 @@ const ShoppingList = () => {
         body: JSON.stringify(data),
       });
       const response = await request.json();
+      //console.log(response);
+      if (response.status === 200) getList();
+      console.log(`Server Error: ${response.status}`);
+    } catch (err) {
+      console.log(`Error: ${err}`);
+    }
+  };
+  const updateListItem = async (listID, listItem, event) => {
+    try {
+      const data = {
+        id: listID,
+        item: listItem,
+      };
+      const request = await fetch('http://localhost:5000/api/listupdate', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorisation: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      });
+      const response = await request.json();
       console.log(response);
       if (response.status === 200) getList();
       console.log(`Server Error: ${response.status}`);
     } catch (err) {
       console.log(`Error: ${err}`);
     }
+    event.preventDefault();
+    setShowPopover(false);
   };
 
   return (
@@ -100,6 +126,7 @@ const ShoppingList = () => {
       </div>
       <div id="itemContainer">
         <div className="itemContainer">
+          {/* Display item list */}
           {resultData.map(({id, item, timestamp}, i) => (
             <div key={i} className="itemDiv">
               <div>
@@ -107,12 +134,27 @@ const ShoppingList = () => {
                 <p>{timestamp}</p>
               </div>
               <div>
-                <button>
+                {/* Buttons */}
+                <button onClick={() => setShowPopover(true)}>
                   <i className="bi bi-pencil-fill" />
                 </button>
                 <button onClick={() => deleteListItem(id)}>
                   <i className="bi bi-trash-fill" />
                 </button>
+                {/* Popover form */}
+                {/* Displays when 'showPopover' is true */}
+                {showPopover && (
+                  <div>
+                    <form onSubmit={()=> updateListItem(id, newItem)}>
+                      <input
+                        type="text"
+                        placeholder="Enter new item..."
+                        onChange={e => setNewItem(e.target.value)}
+                      />
+                      <button type="submit">Submit</button>
+                    </form>
+                  </div>
+                )}
               </div>
             </div>
           ))}
