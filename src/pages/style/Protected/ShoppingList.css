@@ -72,3 +72,26 @@
   margin-bottom:10px;
   border-radius: 1rem;
 }
+
+.itemDiv p{
+  color:rgba(255,255,255,0.5);
+}
+
+#updateForm{
+  display: flex;
+  justify-content: center;
+}
+
+#updateForm input{
+  width: 250px;
+  border-radius: 1rem;
+}
+
+#updateForm form button{
+  background-color: var(--bg);
+  margin-top: 10px;
+}
+#updateForm form button:hover{
+  background-color: var(--black);
+  color: var(--grey);
+}

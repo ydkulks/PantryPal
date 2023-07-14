@@ -28,7 +28,7 @@ const ShoppingList = () => {
         setResultData(items);
         //console.log('All Data: ', response);
       } else {
-        console.log('Server Error: ', response);
+        //console.log('Server Error: ', response);
       }
     } catch (err) {
       console.log('Error:', err);
@@ -79,7 +79,10 @@ const ShoppingList = () => {
       const response = await request.json();
       //console.log(response);
       if (response.status === 200) getList();
-      console.log(`Server Error: ${response.status}`);
+      if (response.status !== 200) {
+        console.log(`Server Error: ${response.status}`);
+        window.location.reload();
+      }
     } catch (err) {
       console.log(`Error: ${err}`);
     }
@@ -101,7 +104,9 @@ const ShoppingList = () => {
       const response = await request.json();
       console.log(response);
       if (response.status === 200) getList();
-      console.log(`Server Error: ${response.status}`);
+      if (response.status !== 200) {
+        console.log(`Server Error: ${response.status}`);
+      }
     } catch (err) {
       console.log(`Error: ${err}`);
     }
@@ -141,11 +146,13 @@ const ShoppingList = () => {
                 <button onClick={() => deleteListItem(id)}>
                   <i className="bi bi-trash-fill" />
                 </button>
-                {/* Popover form */}
-                {/* Displays when 'showPopover' is true */}
-                {showPopover && (
+              </div>
+              {/* Popover form */}
+              {/* Displays when 'showPopover' is true */}
+              {showPopover && (
+                <div id="updateForm">
                   <div>
-                    <form onSubmit={()=> updateListItem(id, newItem)}>
+                    <form onSubmit={() => updateListItem(id, newItem)}>
                       <input
                         type="text"
                         placeholder="Enter new item..."
@@ -154,8 +161,8 @@ const ShoppingList = () => {
                       <button type="submit">Submit</button>
                     </form>
                   </div>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -205,7 +205,7 @@ app.post('/api/listdelete', Authorization, (req, res) => {
 });
 
 app.post('/api/listupdate', Authorization, (req, res) => {
-  console.log(`ID: ${req.body.id}`);
+  //console.log(`ID: ${req.body.id}`);
   sl.update(
     {_id: req.body.id},
     {name: req.user, item: req.body.item, timestamp: Date()},
