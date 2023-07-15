@@ -1,7 +1,9 @@
 const Terms = () => {
   return (
     <div className="TermsContainer">
-      <h2>Terms & Conditions</h2>
+      <div id="TermsHeaderDiv">
+        <h2>Terms & Conditions</h2>
+      </div>
       <div className="TermsCard">
         <h3 className="TermsPoints">Introduction</h3>
         <p className="TermsContent">

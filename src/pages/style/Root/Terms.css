@@ -1,23 +1,34 @@
 @import './var.css';
-
+/*
 .TermsContainer{
   padding: 5cqmax;
+}*/
+
+#TermsHeaderDiv{
+  background-color: var(--bg);
+  margin-top: -30px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+}
+
+#TermsHeaderDiv h2{
+  padding-top: 100px;
+  color: var(--grey);
+  text-align:center;
 }
 
 .TermsCard{
-  /*border:solid var(--bg);*/
-  margin-left: 5cqmax;
-  margin-right: 5cqmax;
+  margin-left: 20%;
+  margin-right: 20%;
 }
 
 .TermsPoints{
-  /*font-family: WaterBrush;*/
   font-size: 2rem;
   font-style: italic;
-  padding-top: 5cqmax;
   color: var(--bg);
 }
 
 .TermsContent{
-  font-size: 1.5rem;
+  font-size: 1rem;
+  padding-bottom: 50px;
 }
