@@ -1,0 +1,2 @@
+API_KEY=###Enter spoonacular API key ###
+ACCESS_TOKEN_SECRET=###Enter a string for secret token###
