@@ -33,7 +33,6 @@ Pantry Pal is a web app that allows users to browse recipes, view cooking instru
 2. Browse and search for recipes using the provided search functionality.
 3. Click on a recipe to view detailed information and cooking instructions.
 4. Generate a shopping list based on the selected recipes.
-5. Explore the map integration to find nearby grocery stores or related points of interest.
 
 ## Contributing
 
