@@ -1,8 +1,7 @@
 /* add "type":"module" in package.json (require)
  * or rename server.js to server.mjs (import)
  */
-//import express from 'express';
-const express = require('express');
+import express from 'express';
 const app = express();
 const port = 5000;
 import fetch from 'node-fetch'; //Fetch
