@@ -7,15 +7,15 @@ const app = express();
 import fetch from 'node-fetch'; //Fetch
 import Datastore from 'nedb'; //DB
 const cf = new Datastore({
-  filename: '../database/contactForm.db',
+  filename: './database/contactForm.db',
   autoload: true,
 });
 const su = new Datastore({
-  filename: '../database/signUp.db',
+  filename: './database/signUp.db',
   autoload: true,
 });
 const sl = new Datastore({
-  filename: '../database/shoppinglist.db',
+  filename: './database/shoppinglist.db',
   autoload: true,
 });
 import dotenv from 'dotenv'; //Env
