@@ -221,4 +221,4 @@ app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });
 */
-exports = app;
+export default = app;
