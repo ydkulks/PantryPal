@@ -203,7 +203,7 @@
 .RecBgImg{
   margin-top: 5rem;
   background-color: var(--dark);
-  background-image: url('../../../assets/Mexican-Cuisine.jpg');
+  /*background-image: url('../../../assets/Mexican-Cuisine.jpg');*/
   background-size: 400px;
   background-repeat:no-repeat;
   width: 400px;
