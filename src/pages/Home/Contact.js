@@ -28,7 +28,7 @@ function Contact() {
     };
     //console.log(formData);
     try {
-      const request = await fetch('http://localhost:5000/api/contact', {
+      const request = await fetch('/api/contact', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

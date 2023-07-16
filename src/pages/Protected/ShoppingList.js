@@ -11,7 +11,7 @@ const ShoppingList = () => {
   const getList = async () => {
     const token = localStorage.getItem('token');
     try {
-      const request = await fetch('http://localhost:5000/api/shoppinglist', {
+      const request = await fetch('/api/shoppinglist', {
         headers: {
           Authorisation: `Bearer ${token}`,
         },
@@ -44,7 +44,7 @@ const ShoppingList = () => {
     event.preventDefault();
     event.target.reset();
     try {
-      const request = await fetch('http://localhost:5000/api/shoppinglist', {
+      const request = await fetch('/api/shoppinglist', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const ShoppingList = () => {
       const data = {
         id: listID,
       };
-      const request = await fetch('http://localhost:5000/api/listdelete', {
+      const request = await fetch('/api/listdelete', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ const ShoppingList = () => {
         id: listID,
         item: listItem,
       };
-      const request = await fetch('http://localhost:5000/api/listupdate', {
+      const request = await fetch('/api/listupdate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

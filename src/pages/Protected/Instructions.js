@@ -10,7 +10,7 @@ const Instructions = () => {
   useEffect(() => {
     const GetInstruction = async () => {
       const ID = localStorage.getItem('RecipeID');
-      const url = `http://localhost:5000/api/instructions`;
+      const url = `/api/instructions`;
       const res = await fetch(url, {
         method: 'POST',
         headers: {

@@ -3,7 +3,7 @@
  */
 import express from 'express';
 const app = express();
-const port = 5000;
+//const port = 5000;
 import fetch from 'node-fetch'; //Fetch
 import Datastore from 'nedb'; //DB
 const cf = new Datastore({
@@ -216,9 +216,9 @@ app.post('/api/listupdate', Authorization, (req, res) => {
     },
   );
 });
-
+/*
 app.listen(port, () => {
   console.log(`Listening to port ${port}`);
 });
-
-module.exports = app;
+*/
+exports = app;
