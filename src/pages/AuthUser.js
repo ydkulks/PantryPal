@@ -5,7 +5,7 @@ const Authorize = async () => {
   var isAuthed = false;
   const token = localStorage.getItem('token');
   try {
-    const res = await fetch('/api/protected', {
+    const res = await fetch('http://localhost:5000/api/protected', {
       headers: {
         Authorisation: `Bearer ${token}`,
       },

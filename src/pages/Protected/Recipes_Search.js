@@ -32,7 +32,7 @@ const RecipesSearch = () => {
       ingredients: `${ingredients}`,
       //offset: `${offset}`,
     };
-    const url = '/api/recipes';
+    const url = 'http://localhost:5000/api/recipes';
     const options = {
       method: 'POST',
       headers: {
