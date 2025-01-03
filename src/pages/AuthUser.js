@@ -1,3 +1,4 @@
+import React from 'react';
 import {lazy} from 'react';
 import {Suspense} from 'react';
 

@@ -1,3 +1,4 @@
+import React from 'react';
 import RecipesSearch from './Recipes_Search.js';
 import AuthUser from '../AuthUser';
 import 'bootstrap/dist/css/bootstrap.min.css';

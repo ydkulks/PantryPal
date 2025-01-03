@@ -100,7 +100,7 @@ const Authorization = (req, res, next) => {
   } else {
     jwt.verify(token, ENV.ACCESS_TOKEN_SECRET, (err, name) => {
       if (err) {
-        console.log(err);
+        // console.log(err);
         return res.send({status: 401, error: 'Unauthorized'});
       } else {
         req.user = name;

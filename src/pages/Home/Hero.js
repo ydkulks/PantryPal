@@ -1,3 +1,4 @@
+import React from 'react';
 // Images
 import Bowl from '../../assets/bowl_herosection.png';
 

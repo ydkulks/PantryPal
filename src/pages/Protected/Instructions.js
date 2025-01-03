@@ -1,3 +1,4 @@
+import React from 'react';
 import AuthUser from '../AuthUser';
 import {useEffect} from 'react';
 

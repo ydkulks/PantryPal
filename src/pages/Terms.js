@@ -1,3 +1,4 @@
+import React from 'react';
 const Terms = () => {
   return (
     <div className="TermsContainer">

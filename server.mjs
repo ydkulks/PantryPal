@@ -55,7 +55,7 @@ app.post('/api/signup', async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password: hashedPwd,
-        role: basic,
+        role: "basic",
       };
       su.insert(record, (err, newDoc) => {});
       res.send({status: 201, signup: 'Created'});

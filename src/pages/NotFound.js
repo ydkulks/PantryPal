@@ -1,3 +1,4 @@
+import React from 'react';
 import './style/Root/NotFound.css';
 //import NF from '../assets/404.png';
 

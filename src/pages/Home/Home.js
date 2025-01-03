@@ -1,3 +1,4 @@
+import React from 'react';
 //CSS
 import '../style/Home/Hero.css';
 import '../style/Home/About.css';
